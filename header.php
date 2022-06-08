@@ -13,7 +13,7 @@
  <?php wp_head(); ?>	
 </head>
 
-<body <?php body_class(array( "vanilla-theme") ); ?>>
+<body <?php body_class(array( "wps-theme") ); ?>>
 
 
     <?php get_template_part('template-parts/header'); ?>

@@ -3,7 +3,7 @@
 
 <main class="main site-main" id="content" role="main">
 
-<section id="primary" class="page-content single-page"> 
+<section id="primary" class="page-content"> 
 <div class="page-content_inner">
 
 <header class="page-header"> 

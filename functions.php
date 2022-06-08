@@ -10,26 +10,25 @@ elseif ($x === 'mail') {return 'mail';}
 }
 
 
+$wps_inc_dir = 'inc';
+$wps_includes = array(
+	'/setup.php', //theme setup
+	'/template-tags.php', //own functions etc.
+	'/enqueue.php',
+	'/theme-settings.php',
+	'/widgets.php',
+	'/hooks.php',
+	'/cpt.php',
+);
 
 
-
-
-//add options page for ACF
-if (function_exists('acf_add_options_page')) {
-
-	acf_add_options_page(array(
-		'page_title' 	=> __('Opcje'),
-		'menu_title'	=> __('Opcje dodatkowe'),
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
+// Load WooCommerce functions if WooCommerce is activated.
+if ( class_exists( 'WooCommerce' ) ) {
+	$wps_includes[] = '/woocommerce.php';
 }
 
-acf_add_options_sub_page(array(
-    'page_title' 	=> 'Kontakt-social',
-    'menu_title'	=> 'Kontakt i sociale',
-    'parent_slug'	=> 'theme-general-settings',
-));
+// Include files.
+foreach ( $wps_includes as $file ) {
+	require_once get_theme_file_path( $wps_inc_dir . $file );
+}
 
- ?>

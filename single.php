@@ -1,8 +1,11 @@
+<?php 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 
-<?php get_header(); ?> 
+get_header(); ?> 
 
 <main class="main site-main" id="content" role="main">
-<section id="primary" class="page-content single-post"> 
+<section id="primary" class="page-content"> 
 <div class="page-content_inner">
 
  <section class="container single-container"> 
@@ -17,17 +20,17 @@
 </header> <!-- post-header -->
 
 <div class="signle-post_content"> <?php the_content(); ?> </div>
-            </article>
+ </article>
  
-            <?php } 
+ <?php } 
             
-            get_template_part('template-parts/pagination');
+   get_template_part('templates/parts/pagination');
  } else { ?> <p class="not-found"><?php _e('Nie znaleziono postów spełniających podane kryteria.'); ?> </p> <?php } 
  wp_reset_query();
  ?>
 
  </section> <!-- /single-container -->
-<?php get_template_part('template-parts/aside'); ?>
+<?php get_template_part('templates/parts/aside'); ?>
 
 
 
