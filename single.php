@@ -1,6 +1,4 @@
-<?php 
-// Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+<?php defined( 'ABSPATH' ) || exit; 
 
 get_header(); ?> 
 
@@ -10,29 +8,24 @@ get_header(); ?>
 
  <section class="container single-container"> 
 
-    <?php if (have_posts()) {  while(have_posts() ) {
-           the_post();  ?>
- 
-<article class="single-article">   
-<header class="page-header single-post_header"> 
-<?php if ( has_post_thumbnail() ) { the_post_thumbnail('medium-large'); } ?>
-<h1 class="single-post_title"><?php the_title(); ?> </h1>
-</header> <!-- post-header -->
+    <?php if (have_posts()): 
+       while(have_posts() ):
+           the_post();  
+           get_template_part('templates/loops/content', 'single' );
+           wps_post_nav();
 
-<div class="signle-post_content"> <?php the_content(); ?> </div>
- </article>
- 
- <?php } 
-            
-   get_template_part('templates/parts/pagination');
- } else { ?> <p class="not-found"><?php _e('Nie znaleziono postów spełniających podane kryteria.'); ?> </p> <?php } 
- wp_reset_query();
+					// If comments are open or we have at least one comment, load up the comment template.
+					if ( comments_open() || get_comments_number() ):comments_template(); endif;
+					
+        endwhile;  
+      else: ?> 
+      <p class="not-found"><?php _e('Nie znaleziono postów spełniających podane kryteria.'); ?> </p> 
+      <?php endif; 
+      wp_reset_query(); 
  ?>
 
  </section> <!-- /single-container -->
 <?php get_template_part('templates/parts/aside'); ?>
-
-
 
 
 </div> <!-- /page-content_inner -->

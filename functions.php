@@ -4,11 +4,6 @@ defined('ABSPATH') || exit;
 
 
 
-function get_contact($x = 'phone') {
-if ($x === 'phone') {return 'phone';}
-elseif ($x === 'mail') {return 'mail';}
-}
-
 
 $wps_inc_dir = 'inc';
 $wps_includes = array(

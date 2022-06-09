@@ -4,6 +4,33 @@ defined('ABSPATH') || exit;
 
 
 
+
+//custom size for image
+add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
+function wpdocs_theme_setup() {
+//add true if want to crop image to sizes
+    add_image_size( 'medium', 768, 768);
+    add_image_size( 'large', 1500, 1200);
+    add_image_size( 'xlarge', 1920, 1200); 
+    add_image_size( 'xxlarge', 2300, 1600); 
+
+/* default:
+Thumbnail: (150px square)
+Medium size: (maximum 300px width and height);
+Large size: (maximum 1024px width and height);  */
+}
+
+
+
+// hide update notifications
+function remove_core_updates(){
+    global $wp_version;return(object) array('last_checked'=> time(),'version_checked'=> $wp_version,);
+    }
+   // add_filter('pre_site_transient_update_core','remove_core_updates'); //hide updates for WordPress itself
+   // add_filter('pre_site_transient_update_plugins','remove_core_updates'); //hide updates for all plugins
+   // add_filter('pre_site_transient_update_themes','remove_core_updates'); //hide updates for all themes
+
+
 //Enable support for Post Formats
 add_theme_support(
    'post-formats',
@@ -117,3 +144,10 @@ function wps_display_search_form() {
 	return get_search_form(false);
 }
 add_shortcode('display_search_form', 'wps_display_search_form');
+
+
+
+function my_secure_generator( $generator, $type ) {
+	return '';
+}
+add_filter( 'the_generator', 'my_secure_generator', 10, 2 );

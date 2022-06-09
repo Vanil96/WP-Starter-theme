@@ -1,53 +1,37 @@
+<?php defined( 'ABSPATH' ) || exit; 
 
-<?php get_header(); ?> 
+get_header(); ?> 
 
 <main class="main site-main" id="content" role="main">
 
-<div id="primary" class="page-content"> 
+<?php if ( is_front_page()): get_template_part( 'templates/parts/hero' );  endif; ?>
+
+<section id="primary" class="page-content"> 
 <div class="page-content_inner">
-<header class="page-header"> 
-    <h1 class="page-header_title"><?php wp_title('', true); ?></h1> 
- </header>
-     
-    <div class="single-post_entry"> 
-<?php   if (have_posts()) {while(have_posts() ) {
-           the_post(); ?>
-<article>
-<header class="page-header single-post_header"> 
-<?php if ( has_post_thumbnail() ) { the_post_thumbnail('medium-large'); } ?>
-	
-<h1 class="single-post_title"><?php the_title(); ?> </h1>
-			</header> <!-- post-header -->
 
-<div class="single-post_content"> <?php the_content(); ?> </div>
-</article>
+<?php get_template_part('templates/parts/left-sidebar'); ?>
 
+ <section class="container page-container index-container"> 
 
+ <?php
+				if ( have_posts() ) {					
+					while ( have_posts() ) {
+						the_post();
+						get_template_part( 'loop-templates/content', get_post_format() );
+					}
+				} else {
+					get_template_part( 'loop-templates/content', 'none' );
+				}
+    wp_reset_query(); 
+    wps_post_nav(); 
+?>
 
+ </section> <!-- /single-container -->
 
-<?php  }} else { ?> <p class="not-found"> <?php _e('Nie znaleziono postów spełniających podane kryteria.'); ?> </p> <?php } 
-wp_reset_query();
- ?>  
+<?php get_template_part('templates/parts/right-sidebar'); ?>
 
-
-
-
-<div class="single-post_pagination"> 
-
-<?php
- previous_post_link('%link', 'Poprzedni', TRUE);
-  next_post_link('%link', 'Następny', TRUE);  ?>
-
-</div>
-</section>
-
-<?php get_template_part('template-parts/aside'); ?>
-  
-
-</div>
-</div>
-
+</div> <!-- /page-content_inner -->
+</section> <!-- /primary -->
  </main>
-
 
 <?php get_footer(); ?>
