@@ -24,7 +24,7 @@ function multiple_widget_init(){
 
     widget_registration('Footer 1', 'footer-sidebar-1', '', $def_beforeWidget, $def_afterWidget, $def_beforeTitle, $def_afterTitle);
     widget_registration('Footer 2', 'footer-sidebar-2', '', $def_beforeWidget, $def_afterWidget, $def_beforeTitle, $def_afterTitle);  
-    widget_registration('Aside', 'aside-sidebar', '', $def_beforeWidget, $def_afterWidget, $def_beforeTitle, $def_afterTitle);  
+    widget_registration('Sidebar', 'sidebar-1', '', $def_beforeWidget, $def_afterWidget, $def_beforeTitle, $def_afterTitle);  
 }
  
 

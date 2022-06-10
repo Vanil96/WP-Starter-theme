@@ -9,8 +9,14 @@
 
             <?php   if (have_posts()) { ?>
             <header class="page-header">
-                <?php
-		         the_title(sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),'</a></h1>'); ?> 
+            <h1 class="page-title">
+								<?php
+								printf(
+									/* translators: %s: query term */
+									esc_html__( 'Search Results for: %s', 'wps' ),
+									'<span>' . get_search_query() . '</span>'
+								);
+								?> </h1>
 			</header><!-- .page-header -->
             <section class="main_inner">
                 <?php 

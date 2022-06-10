@@ -151,3 +151,12 @@ function my_secure_generator( $generator, $type ) {
 	return '';
 }
 add_filter( 'the_generator', 'my_secure_generator', 10, 2 );
+
+
+
+function wps_translate() {
+   
+     /* Make theme available for translation. */
+    load_theme_textdomain( 'wps', get_template_directory() . '/languages' );
+}
+    add_action( 'after_setup_theme', 'wps_translate' );
