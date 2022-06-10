@@ -1,47 +1,45 @@
+<?php get_header(); ?>
 
-<?php get_header(); ?> 
+<section class="wrapper" id="archive-wrapper">
+    <div class="wrapper_inner" id="content" tabindex="-1">
 
-<main class="main site-main" id="content" role="main">
-<section id="primary" class="page-content archive"> 
-<div class="page-content_inner">
+        <?php get_template_part('templates/parts/left-sidebar'); ?>
 
-<header class="page-header">
-    <?php
-        the_archive_title( '<h1 class="page-title">', '</h1>' );
-        the_archive_description( '<div class="taxonomy-description">', '</div>' );?>
-</header>
+        <main class="site-main" role="main">
 
+            <?php   if (have_posts()) { ?>
+            <header class="page-header">
+                <?php
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
+						?>
+            </header><!-- .page-header -->
+            <section class="main_inner">
+                <?php 
+					while(have_posts() ):
+          			 the_post(); 
+				     //get_template_part( 'templates/loop/content', get_post_format() ); ?>
+                <article>
+                    <header class="page-header single-post_header">
+                        <?php if ( has_post_thumbnail() ) { 
+   							 the_post_thumbnail('medium-large'); } ?>
+                        <h2 class="single-post_title"><?php the_title(); ?> </h2>
+                    </header> <!-- post-header -->
 
-    <div class="container archive-container"> 
-<?php   if (have_posts()) {while(have_posts() ) {
-           the_post(); ?>
-<article>
-<header class="page-header single-post_header"> 
-<?php if ( has_post_thumbnail() ) { 
-    the_post_thumbnail('medium-large'); } ?>
- <h2 class="single-post_title"><?php the_title(); ?> </h2>
-			</header> <!-- post-header -->
+                    <div class="single-post_content"> <?php the_content(); ?> </div>
+                </article>
 
-<div class="single-post_content"> <?php the_content(); ?> </div>
-</article>
+                <?php  endwhile;  wp_reset_query();?>
 
+            </section> <!-- /main_inner -->
+	<?php } else { get_template_part( 'templates/loop/none' );}  ?>
 
+        </main>
 
+        <?php get_template_part('templates/parts/right-sidebar'); ?>
 
-<?php  }} else { ?> <p class="not-found"> <?php _e('Nie znaleziono postów spełniających podane kryteria.'); ?> </p> <?php } 
-wp_reset_query();
- ?>  
-
-</div> <!-- /container -->
-
-<?php get_template_part('template-parts/aside'); ?>
-  
-
-
-
-</div> <!-- /page-content_inner -->
-</section> <!-- /primary -->
- </main>
+    </div> <!-- /wrapper_inner -->
+</section> <!-- /wrapper -->
 
 
 <?php get_footer(); ?>

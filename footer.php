@@ -1,16 +1,20 @@
+<footer class="wrapper main-footer">
 
-			<footer class="main-footer">
-
-				<div class="section-inner">
-
-				
+    <div class="footer_inner">
 
 
-				</div><!-- .section-inner -->
 
-			</footer><!-- #site-footer  -->
 
-		<?php wp_footer(); ?>
+	
+    </div><!--/footer_inner -->
+</footer><!-- #main-footer  -->
 
-	</body>
+
+
+
+</div> <!-- /#page -->
+<?php wp_footer(); ?>
+
+</body>
+
 </html>

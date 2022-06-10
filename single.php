@@ -1,35 +1,37 @@
 <?php defined( 'ABSPATH' ) || exit; 
 
-get_header(); ?> 
+get_header(); ?>
 
-<main class="main site-main" id="content" role="main">
-<section id="primary" class="page-content"> 
-<div class="page-content_inner">
+<section class="wrapper" id="post-wrapper">
+    <div class="wrapper_inner" id="content" tabindex="-1">
 
- <section class="container single-container"> 
+        <?php get_template_part('templates/parts/left-sidebar'); ?>
 
-    <?php if (have_posts()): 
+        <main class="site-main" role="main">
+            <section class="main_inner">
+
+                <?php if (have_posts()){ 
        while(have_posts() ):
            the_post();  
            get_template_part('templates/loops/content', 'single' );
            wps_post_nav();
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ):comments_template(); endif;
+					if ( comments_open() || get_comments_number() ):comments_template(); 
+          endif;
 					
         endwhile;  
-      else: ?> 
-      <p class="not-found"><?php _e('Nie znaleziono postów spełniających podane kryteria.'); ?> </p> 
-      <?php endif; 
-      wp_reset_query(); 
- ?>
-
- </section> <!-- /single-container -->
-<?php get_template_part('templates/parts/aside'); ?>
+        wp_reset_query();
+       } else {
+        get_template_part( 'templates/loops/content', 'none' );
+        } ?>
 
 
-</div> <!-- /page-content_inner -->
-</section> <!-- /primary -->
- </main>
+            </section> <!-- /main_inner -->
+        </main>
+
+        <?php get_template_part('templates/parts/right-sidebar'); ?>
+
+    </div> <!-- /wrapper_inner -->
+</section> <!-- /wrapper -->
 
 <?php get_footer(); ?>
