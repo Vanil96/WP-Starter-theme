@@ -14,7 +14,9 @@ function wpdocs_theme_name_scripts() {
     
 
     //styles:
-    wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/assets/style/css/theme.css' );
+    wp_enqueue_style( 'main-style', get_template_directory_uri() . '/assets/style/css/main.css' );
+    wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/style.css' );
 
 
     
