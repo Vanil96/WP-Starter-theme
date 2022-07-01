@@ -5,7 +5,7 @@
           <?php endif;  endif;?>  </div> 
 
 
-<?php get_template_part('template-parts/nav'); ?>
+<?php get_template_part('templates/parts/nav'); ?>
 
 <?php echo get_contact(); ?>
 
