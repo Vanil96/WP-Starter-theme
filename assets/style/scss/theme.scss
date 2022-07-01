@@ -2,7 +2,8 @@
 
 
 html { 
-  font-family: $main-font;
+  scroll-behavior: smooth;
+  font-family: $primary-font;
   font-size: $main-font-size;
 }
 
@@ -13,8 +14,8 @@ html {
 body {
   font-size:$body-font-size;
   line-height: $body-line-height;
-  color: $font-clr;
-  background-color: $bg-clr;
+  color: $primary-font-clr;
+  background-color: $primary-bg-clr;
 }
 
 
@@ -25,6 +26,27 @@ color:$href-clr;
 }
 
 a:hover{color:$href-hov-clr;}
+
+
+h1 {
+ font-size: $xxl-font-size;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: $xl-font-size;
+  margin: 0.67em 0;
+}
+
+h3 {
+  font-size: $lg-font-size;
+  margin: 0.67em 0;
+}
+
+h4 {
+  font-size: $md-font-size;
+  margin: 0.67em 0;
+}
 
 .img-responsive {
     display: block;

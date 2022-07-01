@@ -4,7 +4,7 @@ $white: #FFFF;
 
 
 //fonts
-$main-font: roc-grotesk, "Helvetica Neue", sans-serif; // weights:300, 400, 500, 700
+$primary-font: roc-grotesk, "Helvetica Neue", sans-serif; // weights:300, 400, 500, 700
 
 //font-sizes
 $main-font-size:62,5%;
@@ -21,13 +21,13 @@ $body-line-height:1.42857143;
 
 
 //font-colors
-$font-clr:#EEEEEE;
+$primary-font-clr:#EEEEEE;
 $menu-links-clr: inherit;
 $href-clr: inherit;
 $href-hov-clr:inherit;
 
 //backgrounds
-$bg-clr:#191919;
+$primary-bg-clr:#191919;
 $card-bg-clr: #1F1F1F;
 $footer-bg-clr:#464646;
 $form-bg-clr:#262626;
