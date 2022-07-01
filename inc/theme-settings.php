@@ -51,3 +51,9 @@ if (function_exists('acf_add_options_page')) {
 		 //exampleuse: wpsField('group, 'field', false, true)
 	 }
 
+
+	 
+function imgPath($name = '') {
+	$path = get_template_directory() . '/assets/img/' . $name;
+	return $path;
+}
