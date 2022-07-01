@@ -1,12 +1,30 @@
 @import 'variables', 'normalize', 'grid';
 
-  
+
+html { 
+  font-family: $main-font;
+  font-size: $main-font-size;
+}
+
+.page-title {font-size:$xxl-font-size;}
+.section-title {font-size:$xxl-font-size;}
+
+
+body {
+  font-size:$body-font-size;
+  line-height: $body-line-height;
+  color: $font-clr;
+  background-color: $bg-clr;
+}
+
 
 a {
-color: $href-color;
 text-decoration: none;
 background-color: transparent;
+color:$href-clr;
 }
+
+a:hover{color:$href-hov-clr;}
 
 .img-responsive {
     display: block;

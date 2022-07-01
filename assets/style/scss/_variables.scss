@@ -1,1 +1,37 @@
-$href-color: red;
+//custom variables
+$red: #E80000; 
+$white: #FFFF;
+
+
+//fonts
+$main-font: roc-grotesk, "Helvetica Neue", sans-serif; // weights:300, 400, 500, 700
+
+//font-sizes
+$main-font-size:62,5%;
+$body-font-size:1.6rem;
+
+$xs-font-size:1.6rem;
+$sm-font-size:1.8rem;
+$md-font-size: 2rem;
+$lg-font-size: 2.5rem;
+$xl-font-size: 3.7rem;
+$xxl-font-size:4.5rem;
+
+$body-line-height:1.42857143;
+
+
+//font-colors
+$font-clr:#EEEEEE;
+$menu-links-clr: inherit;
+$href-clr: inherit;
+$href-hov-clr:inherit;
+
+//backgrounds
+$bg-clr:#191919;
+$card-bg-clr: #1F1F1F;
+$footer-bg-clr:#464646;
+$form-bg-clr:#262626;
+$header-bg-clr:#F3F2F2;
+
+
+
