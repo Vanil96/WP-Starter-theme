@@ -7,6 +7,6 @@
 
 <?php get_template_part('templates/parts/nav'); ?>
 
-<?php echo get_contact(); ?>
+<?php //echo get_contact(); ?>
 
 </header>
