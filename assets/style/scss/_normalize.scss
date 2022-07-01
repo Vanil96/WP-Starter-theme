@@ -221,3 +221,17 @@ a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
+
+
+
+/* normalize when its zoomed
+@media only screen and (min--moz-device-pixel-ratio: 1.25),
+    (-o-min-device-pixel-ratio: 5/4),
+    (-webkit-min-device-pixel-ratio: 1.25),
+	(min-device-pixel-ratio: 1.25) {
+body { zoom: .8; } }
+
+@media only screen and (min--moz-device-pixel-ratio: 1.50),
+    (-webkit-min-device-pixel-ratio: 1.50),
+	(min-device-pixel-ratio: 1.50) {
+body { zoom: .7; } }  */
