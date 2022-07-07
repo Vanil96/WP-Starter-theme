@@ -45,3 +45,11 @@ return $text;
    $args['columns'] = 1; // arranged in x columns
    return $args;
 }
+
+
+// WC Remove comments
+function wps_disable_reviews() {
+	remove_post_type_support( 'product', 'comments' );
+}
+
+add_action( 'init', 'wps_disable_reviews' );

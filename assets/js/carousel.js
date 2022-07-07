@@ -9,7 +9,6 @@ new Splide( '.related-product-carousel', {
     padding:{left:0, right:'10%'},
     updateOnMove : true,
     pagination: true,
-    focus: "center",
     breakpoints: {
         1024: {
           perPage: 3,
