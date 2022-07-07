@@ -8,11 +8,11 @@
 <?php
  wp_nav_menu(
  array(
-            'theme_location' => 'main_menu',
+            'theme_location' => 'primary_menu',
             'menu' => 'Top Navigation',
             'container' => 'ul',
-            'menu_class' => 'main-nav',
-            'menu_id' => 'main-nav'
+            'menu_class' => 'primary-nav',
+            'menu_id' => 'primary-nav'
         )
     );
 ?>

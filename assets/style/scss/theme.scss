@@ -79,3 +79,27 @@ h4 {
     border: 0;
     border-top: 1px solid #eeeeee;
   }
+
+
+
+  .btn {
+    font-size:$lg-font-size;
+    text-transform: uppercase;
+    padding:.3em;
+    background-color: grey;
+    border-radius:10px;
+    color:#ffff;
+  }
+
+
+  #page {max-width:2560px; margin:auto}
+
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width:100%;
+    width:90%;
+    background:yellow;
+  }
