@@ -53,3 +53,8 @@ function wps_disable_reviews() {
 }
 
 add_action( 'init', 'wps_disable_reviews' );
+
+
+
+//remove sorting products
+//remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
