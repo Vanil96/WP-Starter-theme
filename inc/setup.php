@@ -9,10 +9,10 @@ defined('ABSPATH') || exit;
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );
 function wpdocs_theme_setup() {
 //add true if want to crop image to sizes
-    add_image_size( 'medium', 768, 768);
-    add_image_size( 'large', 1500, 1200);
-    add_image_size( 'xlarge', 1920, 1200); 
-    add_image_size( 'xxlarge', 2300, 1600); 
+    add_image_size( 'wps_medium', 768, 768);
+    add_image_size( 'wps_large', 1500, 1200);
+    add_image_size( 'wps_xlarge', 1920, 1200); 
+    add_image_size( 'wps_xxlarge', 2560, 1600); 
 
 /* default:
 Thumbnail: (150px square)
