@@ -204,27 +204,27 @@ if ( ! function_exists( 'wps_post_nav' ) ) {
 	/**
 	 * Display navigation to next/previous post when applicable.
 	 */
-	function wps_post_nav() {
-		// Don't print empty markup if there's nowhere to navigate.
-		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-		$next     = get_adjacent_post( false, '', false );
-		if ( ! $next && ! $previous ) {
-			return;
-		}
-		?>
-		<nav class="container navigation post-navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation'); ?></h2>
-			<div class="d-flex nav-links justify-content-between">
-				<?php
-				if ( get_previous_post_link() ) {
-					previous_post_link( '<span class="nav-previous">%link</span>', _x( '<i class="fa fa-angle-left"></i>&nbsp;%title', 'Previous post link' ) );
-				}
-				if ( get_next_post_link() ) {
-					next_post_link( '<span class="nav-next">%link</span>', _x( '%title&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link' ) );
-				}
-				?>
-			</div><!-- .nav-links -->
-		</nav><!-- .navigation -->
+	function wps_post_nav() { ?>
+		<div class="single-post-navigation">
+		<?php 
+	$prev_post = get_previous_post();
+	if (!empty( $prev_post )): ?>
+	
+		<div class="nav-previous alignleft">
+			<i class="icon-left-open-mini">  	</i>
+			<a href="<?php echo get_permalink( $prev_post->ID ); ?>">Poprzedni</a>
+		  </div> 
+	
+	<?php endif; 
+	
+	$next_post = get_next_post();
+	if ( is_a( $next_post , 'WP_Post' ) ) { ?>
+		<div class="nav-next alignright">
+		<a href="<?php echo get_permalink( $next_post->ID ); ?>">Nastepny</a>
+		<i class="icon-right-open-mini">  </i>    </div>
+	
+	<?php } ?> </div>
+
 		<?php
 	}
 }
