@@ -53,7 +53,16 @@ if (function_exists('acf_add_options_page')) {
 
 
 	 
-function imgPath($name = '') {
-	$path = get_template_directory() . '/assets/img/' . $name;
-	return $path;
+
+
+
+//made product categorys title and description compatibile with pagination pages (default not working when its page: 2, 3, 4 etc.)
+function my_theme_woocommerce_taxonomy_archive_description() {
+    if ( is_tax( array( 'product_cat', 'product_tag' ) ) && get_query_var( 'paged' ) != 0 ) {
+        $description = wc_format_content( term_description() );
+        if ( $description ) {
+            echo '' . $description . '';
+        }
+    }
 }
+add_action( 'woocommerce_archive_description', 'my_theme_woocommerce_taxonomy_archive_description');

@@ -248,3 +248,11 @@ if ( ! function_exists( 'understrap_link_pages' ) ) {
 		wp_link_pages( $args );
 	}
 }
+
+
+
+
+function imgPath($name = '') {
+	$path = get_template_directory() . '/assets/img/' . $name;
+	return $path;
+}

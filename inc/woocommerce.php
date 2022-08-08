@@ -56,5 +56,15 @@ add_action( 'init', 'wps_disable_reviews' );
 
 
 
+//change arrows WC pagination
+add_filter( 'woocommerce_pagination_args', 	'rocket_woo_pagination' );
+function rocket_woo_pagination( $args ) {
+
+	$args['prev_text'] = '<i class="icon-left-open-mini"></i>';
+	$args['next_text'] = '<i class="icon-right-open-mini"></i>';
+
+	return $args;
+}
+
 //remove sorting products
 //remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
