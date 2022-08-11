@@ -256,3 +256,70 @@ function imgPath($name = '') {
 	$path = get_template_directory() . '/assets/img/' . $name;
 	return $path;
 }
+
+
+//breadcrumbs display with: the_breadcrumb() 
+function the_breadcrumb() {
+    $sep = ' > ';
+
+    if (!is_front_page()) {
+	
+	// Start the breadcrumb with a link to your homepage
+        echo '<div class="breadcrumbs">';
+        echo '<a href="';
+        echo pll_home_url();
+        echo '">' . get_bloginfo() . '</a>' . $sep;
+
+
+	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
+        if (is_category() || is_single() || is_archive() ){
+
+		if ( get_post_type() === 'post' ) { 
+            echo '<a href="' . get_permalink( get_option( "page_for_posts" ) ) .'"> ' . get_the_title( get_option('page_for_posts', true) ) . ' </a>';
+        } 
+        
+ }
+ 
+if ( get_post_type() === 'product' ) {
+			  if (function_exists('is_woocommerce')) {
+              //echo woocommerce_page_title();
+            echo '<a href="' . wc_get_page_permalink( 'shop' ) .'"> ' . get_the_title(woocommerce_get_page_id( 'shop' )) . ' </a> ';
+              if (!is_single()) {echo $sep;}
+
+          if (is_product_category()) {
+echo woocommerce_page_title();
+ }
+			  }
+			
+		}
+
+
+	
+	// If the current page is a single post, show its title with the separator
+        if (is_single()) {
+            echo $sep;
+            the_title(); 
+		}
+	
+	// If the current page is a static page, show its title.
+        if (is_page()) {
+            echo the_title();  }
+	
+	// if you have a static page assigned to be you posts list page. It will find the title of the static page and display it. i.e Home >> Blog
+        if (is_home()){
+            global $post;
+            $page_for_posts_id = get_option('page_for_posts');
+            if ( $page_for_posts_id ) { 
+                $post = get_post($page_for_posts_id);
+                setup_postdata($post);
+                the_title();
+                rewind_posts();       }}
+
+ if (function_exists('is_woocommerce')) {
+	 if (is_shop()) {
+		 echo woocommerce_page_title();
+	 }
+	 
+ }
+
+   echo '</div>'; } }
