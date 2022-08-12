@@ -106,3 +106,14 @@ h4 {
 
 
 
+  .breadcrumbs .icon:before {color:red; width:auto}
+  .breadcrumbs a {color:#808080
+  }
+  
+  .breadcrumbs a, .breadcrumbs span, .breadcrumbs p, .breadcrumbs {
+    text-transform: lowercase; 
+  displaY:inline-block
+  }
+  
+  .breadcrumbs a::first-letter, .breadcrumbs span::first-letter, .breadcrumbs p::first-letter, .breadcrumbs::first-letter {
+   text-transform: uppercase; }
