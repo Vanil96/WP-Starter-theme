@@ -260,7 +260,7 @@ function imgPath($name = '') {
 
 //breadcrumbs display with: the_breadcrumb() 
 function the_breadcrumb() {
-    $sep = ' > ';
+    $sep = ' <i class="icon-right-open-mini icon"> </i>';
 
     if (!is_front_page()) {
 	
@@ -283,11 +283,14 @@ function the_breadcrumb() {
 if ( get_post_type() === 'product' ) {
 			  if (function_exists('is_woocommerce')) {
               //echo woocommerce_page_title();
-            echo '<a href="' . wc_get_page_permalink( 'shop' ) .'"> ' . get_the_title(woocommerce_get_page_id( 'shop' )) . ' </a> ';
+            echo '<a href="' . get_the_permalink(pll_get_post(get_page_by_path( 'oferta' )->ID)) .'">' .get_the_title(pll_get_post(get_page_by_path( 'oferta' )->ID)) . '</a> ';
+
               if (!is_single()) {echo $sep;}
 
           if (is_product_category()) {
+   echo '<span class="current">';
 echo woocommerce_page_title();
+   echo '</span>';
  }
 			  }
 			
@@ -298,12 +301,17 @@ echo woocommerce_page_title();
 	// If the current page is a single post, show its title with the separator
         if (is_single()) {
             echo $sep;
+           echo '<span class="current">';
             the_title(); 
+   echo '</span>';
 		}
 	
 	// If the current page is a static page, show its title.
         if (is_page()) {
-            echo the_title();  }
+   echo '<span class="current">';
+            echo the_title(); 
+    echo '</span>';  }
+
 	
 	// if you have a static page assigned to be you posts list page. It will find the title of the static page and display it. i.e Home >> Blog
         if (is_home()){
@@ -312,12 +320,16 @@ echo woocommerce_page_title();
             if ( $page_for_posts_id ) { 
                 $post = get_post($page_for_posts_id);
                 setup_postdata($post);
+  echo '<span class="current">';
                 the_title();
+   echo '</span>';
                 rewind_posts();       }}
 
  if (function_exists('is_woocommerce')) {
 	 if (is_shop()) {
+  echo '<span class="current">';
 		 echo woocommerce_page_title();
+   echo '</span>';
 	 }
 	 
  }
