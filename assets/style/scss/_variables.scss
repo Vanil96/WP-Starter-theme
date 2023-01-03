@@ -1,10 +1,13 @@
-//custom variables
-$red: #E80000; 
-$white: #FFFF;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); 
 
+//custom variables
+$dark: #171A18; 
+$white: #F1F1F1;
+$brown: #B28F45;
+$brown-light:#FEE5B8;
 
 //fonts
-$primary-font: roc-grotesk, "Helvetica Neue", sans-serif; // weights:300, 400, 500, 700
+$primary-font:'Poppins', sans-serif;
 
 //font-sizes
 $main-font-size:62,5%;
@@ -21,17 +24,16 @@ $body-line-height:1.42857143;
 
 
 //font-colors
-$primary-font-clr:#EEEEEE;
+$primary-font-clr:$dark;
+$secondary-font-clr:$white;
+
 $menu-links-clr: inherit;
 $href-clr: inherit;
 $href-hov-clr:inherit;
 
 //backgrounds
-$primary-bg-clr:#191919;
-$card-bg-clr: #1F1F1F;
-$footer-bg-clr:#464646;
-$form-bg-clr:#262626;
-$header-bg-clr:#F3F2F2;
+$primary-bg-clr:#F1F1F1;
+
 
 
 

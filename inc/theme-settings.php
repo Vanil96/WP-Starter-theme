@@ -22,12 +22,6 @@ if (function_exists('acf_add_options_page')) {
 	}
 
 
-	function get_contact($x = 'phone') {
-	if ($x === 'phone') {return 'phone';}
-	elseif ($x === 'mail') {return 'mail';}
-	}
-
-
 
 	function getLang() {
 	if ( defined( 'ICL_LANGUAGE_CODE' ) ) { return ICL_LANGUAGE_CODE;} else {return 'pl';}  }  
@@ -66,3 +60,8 @@ function my_theme_woocommerce_taxonomy_archive_description() {
     }
 }
 add_action( 'woocommerce_archive_description', 'my_theme_woocommerce_taxonomy_archive_description');
+
+function imgPath($name = '') {
+	$path = get_template_directory() . '/assets/img/' . $name;
+	return $path;
+}

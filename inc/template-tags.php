@@ -251,13 +251,6 @@ if ( ! function_exists( 'understrap_link_pages' ) ) {
 
 
 
-
-function imgPath($name = '') {
-	$path = get_template_directory() . '/assets/img/' . $name;
-	return $path;
-}
-
-
 //breadcrumbs display with: the_breadcrumb() 
 function the_breadcrumb() {
     $sep = ' <i class="icon-right-open-mini icon"> </i>';

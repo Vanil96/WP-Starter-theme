@@ -1,10 +1,5 @@
 <nav class="main-nav">
-    <div class="container main-nav_inner">
-    <div class="page-logo"> 
-<?php if ( function_exists( 'the_custom_logo' ) ) {
-    the_custom_logo(); }  ?> 
-    </div>
-
+    <div class="main-nav_inner">
 <?php
  wp_nav_menu(
  array(

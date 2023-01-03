@@ -1,9 +1,7 @@
+
+
 /*
-https://splidejs.com/guides/options/#breakpoints
-
-example: 
-
-new Splide( '.related-product-carousel', {
+new Splide( '.slide-container', {
     type   : 'loop',
     perPage: 4,
     padding:{left:0, right:'10%'},
@@ -24,7 +22,5 @@ new Splide( '.related-product-carousel', {
       },
   } ).mount();
 
-
-} //@endIF
-
 */
+

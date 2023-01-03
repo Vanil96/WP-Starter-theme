@@ -78,6 +78,7 @@ if ( ! function_exists( 'wps_register_nav_menu' ) ) {
     function wps_register_nav_menu(){
         register_nav_menus( array(
             'primary_menu' => __( 'Primary Menu'),
+            'social_menu' => __( 'Social Menu'),
             'footer_menu'  => __( 'Footer Menu'),
         ) );
     }

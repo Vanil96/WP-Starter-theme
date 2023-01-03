@@ -1,35 +1,43 @@
-@import 'variables', 'normalize', 'grid';
+@import 'variables', 'normalize';
 
 
-html { 
+html {
   scroll-behavior: smooth;
   font-family: $primary-font;
   font-size: $main-font-size;
 }
 
-.page-title {font-size:$xxl-font-size;}
-.section-title {font-size:$xxl-font-size;}
+.page-title {
+  font-size: $xxl-font-size;
+}
+
+.section-title {
+  font-size: $xxl-font-size;
+}
 
 
 body {
-  font-size:$body-font-size;
+  font-size: $body-font-size;
   line-height: $body-line-height;
   color: $primary-font-clr;
   background-color: $primary-bg-clr;
+  min-height: 100vh;
 }
 
 
 a {
-text-decoration: none;
-background-color: transparent;
-color:$href-clr;
+  text-decoration: none;
+  background-color: transparent;
+  color: $href-clr;
 }
 
-a:hover{color:$href-hov-clr;}
+a:hover {
+  color: $href-hov-clr;
+}
 
 
 h1 {
- font-size: $xxl-font-size;
+  font-size: $xxl-font-size;
   margin: 0.67em 0;
 }
 
@@ -49,71 +57,94 @@ h4 {
 }
 
 .img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-  .img-rounded {
-    border-radius: 6px;
-  }
-  .img-thumbnail {
-    padding: 4px;
-    line-height: 1.42857143;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    display: inline-block;
-    max-width: 100%;
-    height: auto;
-  }
-  .img-circle {
-    border-radius: 50%;
-  }
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
-  hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #eeeeee;
-  }
+.img-rounded {
+  border-radius: 6px;
+}
 
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
 
+.img-circle {
+  border-radius: 50%;
+}
 
-  .btn {
-    font-size:$lg-font-size;
-    text-transform: uppercase;
-    padding:.3em;
-    background-color: grey;
-    border-radius:10px;
-    color:#ffff;
-  }
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
 
 
-  #page {max-width:2560px; margin:auto}
+.btn {
+  padding: .3em 1.5rem;
+  background-color: $dark;
+  border-radius: 30px;
+  color: $white;
 
-  .container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    max-width:100%;
-    width:90%;
-    background:yellow;
-  }
+  &:hover{color:$white; }
+}
 
 
+#page {
+  max-width: 2560px;
+  margin: auto
+}
 
-  .breadcrumbs .icon:before {color:red; width:auto}
-  .breadcrumbs a {color:#808080
-  }
-  
-  .breadcrumbs a, .breadcrumbs span, .breadcrumbs p, .breadcrumbs {
-    text-transform: lowercase; 
-  displaY:inline-block
-  }
-  
-  .breadcrumbs a::first-letter, .breadcrumbs span::first-letter, .breadcrumbs p::first-letter, .breadcrumbs::first-letter {
-   text-transform: uppercase; }
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%;
+  width: 90%;
+  background: yellow;
+}
+
+
+.breadcrumbs .icon:before {
+  color: red;
+  width: auto
+}
+
+.breadcrumbs a {
+  color: #808080
+}
+
+.breadcrumbs a,
+.breadcrumbs span,
+.breadcrumbs p,
+.breadcrumbs {
+  text-transform: lowercase;
+  displaY: inline-block
+}
+
+.breadcrumbs a::first-letter,
+.breadcrumbs span::first-letter,
+.breadcrumbs p::first-letter,
+.breadcrumbs::first-letter {
+  text-transform: uppercase;
+}
+
+nav ul {list-style:none; padding:0}
+
+
+@media(max-width:280px) {
+  #wpadminbar {display:none!important}
+}

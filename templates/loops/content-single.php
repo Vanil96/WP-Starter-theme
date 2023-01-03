@@ -24,6 +24,7 @@
 		understrap_link_pages();
 		?>
 
+
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
