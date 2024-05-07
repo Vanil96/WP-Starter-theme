@@ -1,0 +1,27 @@
+# Node modules - katalog z zależnościami npm
+/node_modules/
+
+# Pliki konfiguracyjne
+/.pnp
+.pnp.js
+
+# Potencjalne pliki konfiguracyjne IDE i edytorów
+/.vscode/
+.idea/
+*.sublime-workspace
+
+# Katalogi budowy - tu są przechowywane wynikowe pliki JS i CSS
+/build/
+/dist/
+
+# Pliki systemu operacyjnego
+.DS_Store
+Thumbs.db
+
+# Pliki tymczasowe, często używane podczas pracy developerskiej
+*.log
+*.tmp
+*.tmp.*
+
+# Pliki cache
+.cache/
