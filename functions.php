@@ -1,8 +1,5 @@
 <?php 
-// Exit if accessed directly.
 defined('ABSPATH') || exit;
-
-
 
 
 $wps_inc_dir = 'inc';
