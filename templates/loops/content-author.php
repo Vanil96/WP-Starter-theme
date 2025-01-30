@@ -2,7 +2,6 @@
 /**
  * Template for displaying posts on the author archive
  *
- * @package Understrap
  */
 
 // Exit if accessed directly.
@@ -24,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 
 			<div class="entry-meta">
 
-				<?php understrap_posted_on(); ?>
+				<?php wps_posted_on(); ?>
 
 			</div><!-- .entry-meta -->
 
@@ -40,7 +39,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
+		<?php wps_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 

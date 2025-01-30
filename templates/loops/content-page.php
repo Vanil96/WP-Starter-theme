@@ -2,7 +2,6 @@
 /**
  * Partial template for content in page.php
  *
- * @package Understrap
  */
 
 // Exit if accessed directly.
@@ -23,14 +22,14 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php
 		the_content();
-		understrap_link_pages();
+		wps_link_pages();
 		?>
 
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 
-		<?php understrap_edit_post_link(); ?>
+		<?php wps_edit_post_link(); ?>
 
 	</footer><!-- .entry-footer -->
 

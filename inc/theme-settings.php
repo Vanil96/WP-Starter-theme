@@ -16,7 +16,7 @@ if (function_exists('acf_add_options_page')) {
 
  	acf_add_options_sub_page(array(
     'page_title' 	=> 'Kontakt-social',
-    'menu_title'	=> 'Kontakt i sociale',
+    'menu_title'	=> 'Kontakt / sociale',
     'parent_slug'	=> 'theme-general-settings',
 	));
 	}
@@ -44,9 +44,6 @@ if (function_exists('acf_add_options_page')) {
 			if ($var) { return $var[$field]; }
 		 //exampleuse: wpsField('group, 'field', false, true)
 	 }
-
-
-	 
 
 
 

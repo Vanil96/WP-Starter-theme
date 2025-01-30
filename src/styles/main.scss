@@ -1,6 +1,20 @@
-@import 'shared/variables', 'nav';
+@use 'shared/variables';
+@use 'nav';
 
+//Sprite SVG
+.icon {
+    width: 32px;
+    height: 32px;
+    fill: currentColor; // pozwala zmieniać kolor przez CSS
+    transition: fill 0.3s ease-in-out;
+    //np:
+    &-instagram {
+        color:red;
+        width:1000px;
+        height:1000px;
+    }
+}
 
 main {
     background-color: rgb(223, 223, 223);
-}
+} 

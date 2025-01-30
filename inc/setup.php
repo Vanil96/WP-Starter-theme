@@ -4,6 +4,16 @@ defined('ABSPATH') || exit;
 
 
 
+//svg sprites support
+function load_svg_sprite() {
+    $sprite_path = get_template_directory() . '/assets/img/sprite.svg';
+    if (file_exists($sprite_path)) {
+        echo '<div style="display: none;">' . file_get_contents($sprite_path) . '</div>';
+    }
+}
+add_action('wp_footer', 'load_svg_sprite', 999);
+
+
 
 //custom size for image
 add_action( 'after_setup_theme', 'wpdocs_theme_setup' );

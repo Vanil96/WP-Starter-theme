@@ -1,5 +1,7 @@
-@import 'shared/variables', 'normalize', 'grid', 'spacing';
-
+@use 'shared/variables' as *; 
+@use 'normalize';
+@use 'grid';
+@use 'spacing';
 
 html {
   scroll-behavior: smooth;

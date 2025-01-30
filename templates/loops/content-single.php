@@ -9,7 +9,7 @@
 
 		<div class="entry-meta">
 
-			<?php understrap_posted_on(); ?>
+			<?php wps_posted_on(); ?>
 
 		</div><!-- .entry-meta -->
 
@@ -21,7 +21,7 @@
 
 		<?php
 		the_content();
-		understrap_link_pages();
+		wps_link_pages();
 		?>
 
 
@@ -29,7 +29,7 @@
 
 	<footer class="entry-footer">
 
-		<?php understrap_entry_footer(); ?>
+		<?php wps_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 

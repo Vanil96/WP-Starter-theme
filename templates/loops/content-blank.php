@@ -2,7 +2,6 @@
 /**
  * Blank content partial template
  *
- * @package Understrap
  */
 
 // Exit if accessed directly.
