@@ -37,12 +37,13 @@ Aby pracować nad stylami i skryptami:
 ## 🔹 **Zarządzanie Ikonami SVG**
 - Dodany **`sprite.svg`** (wygenerowany na podstawie ok. 300 ikon z [Feather Icons](https://feathericons.com/)).
 - Proste użycie w template:
-
 ```html
 <svg class="icon icon-instagram">
   <use xlink:href="#icon-instagram"></use>
 </svg>
 ```
+📌 Pełna lista ikon SVG jest dostępna tutaj:  
+➡️ [Podgląd ikon SVG](https://github.com/Vanil96/WP-Starter-theme/tree/main/assets/icons.html)
 
 Pełna lista dostępnych ikon znajduje się w pliku [icons.md](icons.md).
 
