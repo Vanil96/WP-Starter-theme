@@ -3,9 +3,7 @@
 defined('ABSPATH') || exit;
 
 
- //register custom post type
-
- add_action('init', function() {
+ //add_action('init', function() {
 	register_post_type('book', [
 		'label' => __('Books', 'txtdomain'),
 		'public' => true,
@@ -27,8 +25,6 @@ defined('ABSPATH') || exit;
 		],		
 	]);
  
- //register custom taxonomy	
-
 	register_taxonomy('book_genre', ['book'], [
 		'label' => __('Genres', 'txtdomain'),
 		'hierarchical' => true,
@@ -50,5 +46,4 @@ defined('ABSPATH') || exit;
 		]
 	]);
 	register_taxonomy_for_object_type('book_genre', 'book');
-
-});
+//});

@@ -4,8 +4,15 @@ defined('ABSPATH') || exit;
 
 
 function wpdocs_theme_name_scripts() {
-    //scripts:   (if last parameter === true => load in footer)       
+    //scripts:   (if last parameter === true => load in footer)     
+
+    //fonts
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap', array(), null);
+
+    //js
     wp_enqueue_script('my-theme-script', get_template_directory_uri() . '/build/index.js', array('jquery'), '1.0.0', true); //jquery depends
+
+    //styles
     wp_enqueue_style('my-theme-style', get_template_directory_uri() . '/build/index.css', array(), '1.0.0');
 }
 

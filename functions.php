@@ -4,10 +4,10 @@ defined('ABSPATH') || exit;
 
 $wps_inc_dir = 'inc';
 $wps_includes = array(
-	'/setup.php', //theme setup
-	'/template-tags.php', //own functions etc.
+	'/theme-config.php', 
+	'/template-tags.php', 
 	'/enqueue.php',
-	'/theme-settings.php',
+	'/theme-main.php',
 	'/widgets.php',
 	'/hooks.php',
 	'/cpt.php',
