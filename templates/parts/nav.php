@@ -1,8 +1,6 @@
 <nav class="main-nav">
     <div class="main-nav_inner">
 
-<h1>test </h1>
-
 <?php
  wp_nav_menu(
  array(

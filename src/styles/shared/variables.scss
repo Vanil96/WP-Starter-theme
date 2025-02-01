@@ -1,50 +1,88 @@
+@use "sass:map";
 
-//custom variables
-$dark: #171A18; 
-$white: #F1F1F1;
-$brown: #B28F45;
-$brown-light:#FEE5B8;
+$colors: (
+  //base
+  "orange": #ef6f6c,
+  "blue": #5f88c2,
+  "green": #8a9b68,
+  "indygo": #5c6cad,
+  "darkBlue": #29335c,
+  //general
+  "primary": #5c6cad,
+  "secondary": #29335c,
+  //status
+  "succes": green,
+  "warn": yellow,
+  "error": red,
+  //additional
+  "background": #f2efe1,
+  "dark": #171a18,
+  "white": #f1f1f1
+);
 
-//fonts
-$primary-font:'Poppins', sans-serif;
+// Font sizes map
+$font-sizes: (
+  "main-font": 62.5%,
+  // 62.5% means that 1.45rem = 14,5px
+  "body-font": 1.6rem,
+  "xs": 1.6rem,
+  "sm": 1.8rem,
+  "md": 2rem,
+  "lg": 2.5rem,
+  "xl": 3.7rem,
+  "xxl": 4.5rem,
+);
 
-//font-sizes
-$main-font-size:62,5%;
-$body-font-size:1.6rem;
+// Fonts map
+$fonts: (
+  "theme-font": "Roboto, sans-serif",
+  "secondary-font": "Instrument Serif, serif",
+);
 
-$xs-font-size:1.6rem;
-$sm-font-size:1.8rem;
-$md-font-size: 2rem;
-$lg-font-size: 2.5rem;
-$xl-font-size: 3.7rem;
-$xxl-font-size:4.5rem;
+// Font colors map
+$font-colors: (
+  "theme": map.get($colors, "darkBlue"),
+  "secondary": map.get($colors, "orange"),
+  "btn-default": map.get($colors, "white"),
+  "btn-default-hover": map.get($colors, "dark"),
+  "menu-links": inherit,
+  "href": inherit,
+  "href-hover": inherit,
+);
 
-$body-line-height:1.42857143;
+// Background colors map
+$background-colors: (
+  "theme": map.get($colors, "background"),
+  "btn-default": map.get($colors, "primary"),
+  "btn-default-hover": map.get($colors, "background"),
+);
 
+// Breakpoints map
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xll": 1450px,
+);
 
-//font-colors
-$primary-font-clr:$dark;
-$secondary-font-clr:$white;
-
-$menu-links-clr: inherit;
-$href-clr: inherit;
-$href-hov-clr:inherit;
-
-//backgrounds
-$primary-bg-clr:#F1F1F1;
-
-$breakpoint-sm: 576px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-$breakpoint-xll: 1450px;
-
+//used in grid.scss
+$max-width-values: (
+  xs: 200px,
+  sm: 400px,
+  md: 600px,
+  lg: 800px,
+  xl: 1000px,
+  2xl: 1200px,
+  3xl: 1400px,
+  4xl: 1600px,
+  5xl: 1800px,
+  6xl: 2000px,
+  7xl: 2200px,
+);
 
 //paths
-//use f.e  background-image: url('#{$assets}img/instagram.svg');
-$assets: '../../assets/';    
-$images: '../../assets/img/';
+//f.e  background-image: url('#{$assets}img/instagram.svg');
+$assets: "../../assets/";
+$images: "../../assets/img/";
 $sprite-url: "#{$assets}img/sprite.svg";
-
-
-

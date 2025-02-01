@@ -1,0 +1,72 @@
+@use "../shared/variables" as var;
+@use "sass:map";
+
+// <div class="max-w-xs">This div has a maximum width of 200px</div>
+@each $name, $value in var.$max-width-values {
+  .max-w-#{$name} {
+    max-width: $value;
+  }
+}
+
+// <div class="container">This container is centered and padded</div>
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// <div class="row">This row contains flex items</div>
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+//<div class="col-6">This column takes up 50% of the container</div>
+[class*="col-"] {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+//like bootstrap grid
+// <div class="col-sm-6">This column takes up 50% of the container on small screens</div>
+@mixin generate-grid-classes($prefix, $breakpoint: null) {
+  $media-query: if($breakpoint, "min-width: #{$breakpoint}", null);
+
+  @if $media-query {
+    @media (#{$media-query}) {
+      @for $i from 1 through 12 {
+        $percentage: $i * 8.333333%;
+        .#{$prefix}-#{$i} {
+          flex: 0 0 $percentage;
+          max-width: $percentage;
+        }
+      }
+    }
+  } @else {
+    @for $i from 1 through 12 {
+      $percentage: $i * 8.333333%;
+      .#{$prefix}-#{$i} {
+        flex: 0 0 $percentage;
+        max-width: $percentage;
+      }
+    }
+  }
+}
+
+// Implementing responsive grid classes for each breakpoint
+@include generate-grid-classes("col");
+@include generate-grid-classes("col-sm", map.get(var.$breakpoints, "sm"));
+@include generate-grid-classes("col-md", map.get(var.$breakpoints, "md"));
+@include generate-grid-classes("col-lg", map.get(var.$breakpoints, "lg"));
+@include generate-grid-classes("col-xl", map.get(var.$breakpoints, "xl"));
+@include generate-grid-classes("col-xll", map.get(var.$breakpoints, "xll"));

@@ -1,0 +1,31 @@
+@use "../shared/variables" as *;
+@use "sass:map";
+
+
+// Usage: <div class="bg-primary">Primary background color</div>
+@each $name, $color in $colors {
+    .bg-#{$name} {
+      background-color: $color;
+    }
+  }
+  
+  // Usage: <p class="text-secondary">Secondary text color</p>
+  @each $name, $color in $colors {
+    .text-#{$name} {
+      color: $color;
+    }
+  }
+  
+  // Usage: <h1 class="font-size-xl">Extra large font size</h1>
+  @each $label, $size in $font-sizes {
+    .font-size-#{$label} {
+      font-size: $size;
+    }
+  }
+  
+  // Usage: <p class="font-family-theme">Text with theme font</p>
+  @each $label, $font in $fonts {
+    .font-family-#{$label} {
+      font-family: $font;
+    }
+  }

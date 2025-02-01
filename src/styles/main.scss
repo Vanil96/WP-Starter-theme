@@ -1,20 +1,24 @@
-@use 'shared/variables';
-@use 'nav';
+@use "shared/variables" as *;
+@use "normalize";
+@use "utility/grid";
+@use "utility/spacing";
+@use "utility/typography";
+@use "utility/utility";
+@use "nav";
+@use "sass:map";
 
-//Sprite SVG
-.icon {
-    width: 32px;
-    height: 32px;
-    fill: currentColor; // pozwala zmieniać kolor przez CSS
-    transition: fill 0.3s ease-in-out;
-    //np:
-    &-instagram {
-        color:red;
-        width:1000px;
-        height:1000px;
-    }
+
+//btns
+.btn {
+  padding: 0.3em 1.5rem;
+  border-radius: 30px;
+  font-size: 1.6rem;
+  color: map.get($font-colors, "btn-default");
+  background-color: map.get($background-colors, "btn-default");
+  border: 2px solid map.get($colors, "primary");
+
+  &:hover {
+    color: map.get($font-colors, "btn-default-hover");
+    background-color: map.get($background-colors, "btn-default-hover");
+  }
 }
-
-main {
-    background-color: rgb(223, 223, 223);
-} 

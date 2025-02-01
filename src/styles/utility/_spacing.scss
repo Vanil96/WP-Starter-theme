@@ -8,7 +8,7 @@ $spacing-sizes: (
   5: 3rem,
 );
 
-
+// Usage: <div class="mt-2 mb-2"></div>
 @mixin generate-margins {
   @each $size, $value in $spacing-sizes {
     .m-#{$size} { margin: $value !important; }
@@ -21,7 +21,7 @@ $spacing-sizes: (
 
 @include generate-margins;
 
-
+// Usage: <div class="pl-2 pt-4"></div>
 @mixin generate-paddings {
   @each $size, $value in $spacing-sizes {
     .p-#{$size} { padding: $value !important; }
