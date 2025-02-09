@@ -18,14 +18,14 @@
   
   // Usage: <h1 class="font-size-xl">Extra large font size</h1>
   @each $label, $size in $font-sizes {
-    .font-size-#{$label} {
+    .text-#{$label} {
       font-size: $size;
     }
   }
   
   // Usage: <p class="font-family-theme">Text with theme font</p>
   @each $label, $font in $fonts {
-    .font-family-#{$label} {
+    .font-#{$label} {
       font-family: $font;
     }
   }

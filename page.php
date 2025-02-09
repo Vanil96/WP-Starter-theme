@@ -2,6 +2,8 @@
 
 get_header(); ?> 
 
+<?php if ( is_front_page()): get_template_part( 'templates/parts/hero' );  endif; ?>
+
 <section class="wrapper" id="page-wrapper"> 
 <div class="wrapper_inner" id="content" tabindex="-1"> 
 

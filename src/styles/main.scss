@@ -1,3 +1,4 @@
+
 @use "shared/variables" as *;
 @use "normalize";
 @use "utility/grid";
@@ -6,6 +7,11 @@
 @use "utility/utility";
 @use "nav";
 @use "sass:map";
+
+
+h1,h2,h3,h4 {
+  font-weight:300;
+}
 
 
 //btns
@@ -20,5 +26,16 @@
   &:hover {
     color: map.get($font-colors, "btn-default-hover");
     background-color: map.get($background-colors, "btn-default-hover");
+  }
+}
+
+
+.hero {
+  &-container {
+    min-height: 570px;
+    background-image: url("#{$images}header.png");
+    background-position: left bottom;
+    background-size:contain;
+    background-repeat: no-repeat;
   }
 }

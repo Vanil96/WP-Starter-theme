@@ -60,20 +60,20 @@ $mb-menu-beakpoint: 960px;
   }
 
   .instagram a::before {
-    background-image: url("#{$assets}img/instagram.svg");
+  //  background-image: url("#{$assets}img/instagram.svg");
   }
 
   .linkedin a::before {
-    background-image: url("#{$assets}img/linkedin.svg");
+   // background-image: url("#{$assets}img/linkedin.svg");
   }
 
   .pinterest a::before {
-    background-image: url("#{$assets}img/pinterest.svg");
+   // background-image: url("#{$assets}img/pinterest.svg");
   }
 
   .behance a::before {
     width: 1.7rem;
-    background-image: url("#{$assets}img/behance.svg");
+   // background-image: url("#{$assets}img/behance.svg");
   }
 
 }
@@ -83,7 +83,7 @@ $mb-menu-beakpoint: 960px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("#{$assets}img/list.svg");
+ // background-image: url("#{$assets}img/list.svg");
   min-height: 2.5rem;
   min-width: 2.5rem;
   border: 0;
@@ -91,7 +91,7 @@ $mb-menu-beakpoint: 960px;
 }
 
 .mobile-menu--open #mb-menu-toggler {
-  background-image: url("#{$assets}img/exit.svg");
+//  background-image: url("#{$assets}img/exit.svg");
 }
 
 @media (max-width: $mb-menu-beakpoint) {

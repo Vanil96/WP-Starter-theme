@@ -35,8 +35,8 @@ $font-sizes: (
 
 // Fonts map
 $fonts: (
-  "theme-font": "Roboto, sans-serif",
-  "secondary-font": "Instrument Serif, serif",
+  theme: ('Roboto', serif),
+  secondary: ('Instrument Serif', serif)
 );
 
 // Font colors map

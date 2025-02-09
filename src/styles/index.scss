@@ -1,9 +1,10 @@
 @use "shared/variables" as *;
 @use "sass:map";
 
+
 html {
   scroll-behavior: smooth;
-  font-family: map.get($fonts, "theme-font");
+  font-family: map.get($fonts, "theme");
   font-size: map.get($font-sizes, "main-font");
   background-color: map.get($background-colors, "theme");
 }
