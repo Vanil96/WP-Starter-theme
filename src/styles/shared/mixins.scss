@@ -1,29 +1,66 @@
 @use 'variables' as var;
+@use "sass:map";
+
 
 @mixin sm {
-  @media (min-width: var.$breakpoint-sm) {
+  @media (min-width: map.get(var.$breakpoints, "sm")) {
     @content;
   }
 }
 
 @mixin md {
-  @media (min-width: var.$breakpoint-md) {
+  @media (min-width: map.get(var.$breakpoints, "md")) {
     @content;
   }
 }
 
 @mixin lg {
-  @media (min-width: var.$breakpoint-lg) {
+  @media (min-width: map.get(var.$breakpoints, "lg")) {
     @content;
   }
 }
 
 @mixin xl {
-  @media (min-width: var.$breakpoint-xl) {
+  @media (min-width: map.get(var.$breakpoints, "xl")) {
     @content;
   }
 }
 
+@mixin xxl {
+  @media (min-width: map.get(var.$breakpoints, "xxl")) {
+    @content;
+  }
+}
+
+@mixin max-sm {
+  @media (max-width: map.get(var.$breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin max-md {
+  @media (max-width: map.get(var.$breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin max-lg {
+  @media (max-width: map.get(var.$breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin max-xl {
+  @media (max-width: map.get(var.$breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin max-xxl {
+  @media (max-width: map.get(var.$breakpoints, "xxl")) {
+    @content;
+  }
+}
 
 
 @mixin rounded($radius: 5px) {

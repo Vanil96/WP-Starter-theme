@@ -29,3 +29,14 @@
       font-family: $font;
     }
   }
+
+
+  @each $weight in (100, 200, 300, 400, 500, 600, 700, 800, 900) {
+    .bold-#{$weight} {
+      font-weight: $weight;
+    }
+  }
+
+  .font-italic {
+    font-style:italic;
+  }

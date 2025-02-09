@@ -43,8 +43,8 @@ $fonts: (
 $font-colors: (
   "theme": map.get($colors, "darkBlue"),
   "secondary": map.get($colors, "orange"),
-  "btn-default": map.get($colors, "white"),
-  "btn-default-hover": map.get($colors, "dark"),
+  "btn-default": map.get($colors, "dark"),
+  "btn-default-hover": map.get($colors, "white"),
   "menu-links": inherit,
   "href": inherit,
   "href-hover": inherit,
@@ -53,8 +53,8 @@ $font-colors: (
 // Background colors map
 $background-colors: (
   "theme": map.get($colors, "background"),
-  "btn-default": map.get($colors, "primary"),
-  "btn-default-hover": map.get($colors, "background"),
+  "btn-default": map.get($colors, "background"),
+  "btn-default-hover": map.get($colors, "primary"),
 );
 
 // Breakpoints map
@@ -63,7 +63,7 @@ $breakpoints: (
   "md": 768px,
   "lg": 992px,
   "xl": 1200px,
-  "xll": 1450px,
+  "xxl": 1450px,
 );
 
 //used in grid.scss

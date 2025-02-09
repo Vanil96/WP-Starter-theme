@@ -68,6 +68,12 @@ function getLang()
 
 function imgPath($name = '')
 {
-	$path = get_template_directory() . '/assets/img/' . $name;
+	$path = get_template_directory_uri() . '/assets/img/' . $name;
 	return $path;
+}
+
+
+function svgPath()
+{
+    return imgPath('sprite.svg');
 }
