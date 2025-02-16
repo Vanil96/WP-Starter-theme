@@ -190,3 +190,10 @@ function wps_translate()
 add_action('after_setup_theme', 'wps_translate');
 
 
+//all in one wp migration exclude node modules
+  function mb_ai1wm_exclude_node_modules($exclude_filters) {
+    $exclude_filters[] = 'WP-Starter-theme/node_modules'; //theme name
+    return $exclude_filters;
+  }
+  
+  add_filter('ai1wm_exclude_themes_from_export', 'mb_ai1wm_exclude_node_modules');
