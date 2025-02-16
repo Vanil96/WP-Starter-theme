@@ -1,24 +1,27 @@
-<!-- hero front page --> 
+<!-- hero front page -->
 
- <section class="hero hero-container">
-
- <div class=hero-container_inner>
-    <p class="subtitle">Patrycja Kościelniak</p>
-
- <h1 class="title"> Jestem  <span class="font-secondary font-italic">psychologiem </span> specjalizującym
- się w pracy z dziećmi i młodzieżą 
- </h1>
-
- <div><button class="btn">Porozmawiajmy</button>
- </div>
- </div>
+<section class="hero hero-container">
+<?php 
+    $groupName = get_field('header', 6);
 
 
-<button class="btn-icon"> 
-<svg class="icon icon-chevron">
-<use xlink:href="<?php echo svgPath(); ?>#chevron-down"></use>
-</svg>
-</button>
+?>
+    <div class=hero-container_inner>
+        <p class="subtitle">Patrycja Kościelniak <?php echo $groupName['title_extend']; ?> </p>
+      
+        <h1 class="title font-mixed">
+            <?php echo $groupName['title']; ?>
+        </h1>
 
-</section>
+        <div><a class="btn" href="<?php echo esc_attr($groupName['btn_url']); ?>"> <?php echo $groupName['btn_name']; ?></a>
+        </div>
+    </div>
 
+
+    <a class="btn-icon" href="#about-me">
+        <svg class="icon icon-chevron">
+            <use xlink:href="<?php echo svgPath(); ?>#chevron-down"></use>
+        </svg>
+</a>
+
+</section>  

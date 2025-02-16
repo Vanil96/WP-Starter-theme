@@ -1,18 +1,18 @@
 <?php defined( 'ABSPATH' ) || exit; 
 
-get_header(); ?> 
+get_header(); ?>
 
 <?php if ( is_front_page()): get_template_part( 'templates/parts/hero' );  endif; ?>
 
-<section class="wrapper" id="page-wrapper"> 
-<div class="wrapper_inner" id="content" tabindex="-1"> 
+<section class="wrapper" id="page-wrapper">
+    <div class="wrapper_inner" id="content" tabindex="-1">
 
-<?php get_template_part('templates/parts/left-sidebar'); ?>
+        <?php get_template_part('templates/parts/left-sidebar'); ?>
 
- <main class="site-main" role="main">
-<section class="main_inner"> 
+        <main class="site-main" role="main">
+            <section class="main_inner">
 
-    <?php if (have_posts()) {
+                <?php if (have_posts()) {
        while(have_posts() ):
            the_post();  
            get_template_part('templates/loops/content', 'page' );
@@ -26,15 +26,13 @@ get_header(); ?>
        } else {	
          get_template_part( 'templates/loops/content', 'none' );
        } ?>
-      
-      
 
-</section> <!-- /main_inner -->
-</main>
+            </section> <!-- /main_inner -->
+        </main>
 
-<?php get_template_part('templates/parts/right-sidebar'); ?>
+        <?php get_template_part('templates/parts/right-sidebar'); ?>
 
-</div> <!-- /wrapper_inner -->
+    </div> <!-- /wrapper_inner -->
 </section> <!-- /wrapper -->
 
 <?php get_footer(); ?>

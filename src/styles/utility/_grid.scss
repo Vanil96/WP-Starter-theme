@@ -25,6 +25,10 @@
   margin-left: -15px;
 }
 
+.flex {
+  display: flex;
+}
+
 //<div class="col-6">This column takes up 50% of the container</div>
 [class*="col-"] {
   position: relative;
@@ -35,6 +39,14 @@
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
+}
+
+.h-100 {
+  height:100%;
+}
+
+.w-100 {
+  width:100%;
 }
 
 //like bootstrap grid
@@ -70,3 +82,135 @@
 @include generate-grid-classes("col-lg", map.get(var.$breakpoints, "lg"));
 @include generate-grid-classes("col-xl", map.get(var.$breakpoints, "xl"));
 @include generate-grid-classes("col-xll", map.get(var.$breakpoints, "xll"));
+
+@each $dir in (row, row-reverse, column, column-reverse) {
+  .flex-#{$dir} {
+    flex-direction: $dir;
+  }
+}
+
+@each $value
+  in (flex-start, center, flex-end, space-between, space-around, space-evenly)
+{
+  .justify-#{$value} {
+    justify-content: #{$value};
+  }
+}
+
+@each $value
+  in (flex-start, center, flex-end, space-between, space-around, space-evenly)
+{
+  .align-#{$value} {
+    align-items: #{$value};
+  }
+}
+
+@for $i from 1 through 6 {
+  .row-cols-#{$i} > * {
+    flex: 0 0 calc(100% / #{$i});
+    max-width: calc(100% / #{$i});
+  }
+}
+
+// Auto layout (kolumny o szerokości dopasowanej do treści)
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+}
+
+@for $i from 1 through 6 {
+  .offset-#{$i} {
+    margin-left: calc(100% / 12 * #{$i});
+  }
+}
+
+@for $i from 0 through 6 {
+  .order-#{$i} {
+    order: #{$i};
+  }
+}
+
+// Responsywne wersje utility classes (np. justify-content-md-center)
+@each $bp, $value in var.$breakpoints {
+  @media (min-width: $value) {
+    @each $align
+      in (
+        flex-start,
+        center,
+        flex-end,
+        space-between,
+        space-around,
+        space-evenly
+      )
+    {
+      .justify-#{$bp}-#{$align} {
+        justify-content: #{$align};
+      }
+    }
+
+    @each $align
+      in (
+        flex-start,
+        center,
+        flex-end,
+        space-between,
+        space-around,
+        space-evenly
+      )
+    {
+      .align-#{$bp}-#{$align} {
+        align-items: #{$align};
+      }
+    }
+
+    @media (min-width: $value) {
+      @each $dir in (row, row-reverse, column, column-reverse) {
+        .flex-#{$bp}-#{$dir} {
+          flex-direction: $dir;
+        }
+      }
+    }
+
+    @for $i from 1 through 6 {
+      .row-cols-#{$bp}-#{$i} > * {
+        flex: 0 0 calc(100% / #{$i});
+        max-width: calc(100% / #{$i});
+      }
+
+      .offset-#{$bp}-#{$i} {
+        margin-left: calc(100% / 12 * #{$i});
+      }
+
+      .order-#{$bp}-#{$i} {
+        order: #{$i};
+      }
+    }
+  }
+}
+
+$gap-sizes: (
+  0: 0,
+  1: 0.5rem,
+  2: 1rem,
+  3: 1.5rem,
+  4: 2rem,
+  5: 3rem,
+  6: 3.5rem,
+);
+
+@each $key, $size in $gap-sizes {
+  .gap-#{$key} {
+    gap: $size;
+  }
+}
+
+@each $bp, $value in var.$breakpoints {
+  @media (min-width: $value) {
+    @each $key, $size in $gap-sizes {
+      .gap-#{$bp}-#{$key} {
+        gap: $size;
+      }
+    }
+  }
+}
