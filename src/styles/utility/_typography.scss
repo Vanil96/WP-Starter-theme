@@ -16,12 +16,24 @@
     }
   }
   
-  // Usage: <h1 class="font-xl">Extra large font size</h1>
+  // Usage: <h1 class="text-xl">Extra large font size</h1>
+  // Usage: <h1 class="text-xs lg:text-lg">Extra large font size from breakpoint LG</h1>
+
   @each $label, $size in $font-sizes {
     .text-#{$label} {
       font-size: $size;
     }
+  
+    @each $bp, $width in $breakpoints {
+      @media (min-width: #{$width}) {
+        .#{$bp}\:text-#{$label} { 
+          font-size: $size;
+        }
+      }
+    }
   }
+  
+
   
   // Usage: <p class="font-secondary"></p>
   @each $label, $font in $fonts {

@@ -10,7 +10,7 @@
 
 //btns
 .btn {
-  display:inline-block;
+  display: inline-block;
   border-radius: 30px;
   font-size: 1.6rem;
   color: map.get($font-colors, "btn-default");
@@ -101,11 +101,18 @@
 }
 
 .large-subtitle {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   font-weight: 300;
+  margin-top:1rem;
+  margin-bottom: 1.5rem 0;
+
+  @include sm {
+    font-size: 2.2rem;
+  }
 
   @include lg {
     font-size: 3.4rem;
+    margin-bottom: 2.5rem;
   }
 
   @include xl {
@@ -146,27 +153,33 @@
     margin-top: 2.7rem;
     font-size: 23px;
     font-weight: 400;
+    text-align: center;
   }
 }
 
 .card-opinion {
   // box-shadow: 0px 20px 40px 0px #3f445a4d;
   border-radius: 8px;
-  min-height: 364px;
-  width: 327px;
+  min-height: 230px;
+  width: 460px;
   max-width: 100%;
   background: #5c6cad;
   color: white;
-  padding: 3.5rem 2rem 2rem 2rem;
+  padding: 3.5rem 2rem 4rem 2rem;
+  position: relative;
 
   &_desc {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    text-align: left;
   }
 
   &_author {
     text-align: right;
     font-size: 1.9rem;
     font-weight: 400;
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.25rem;
   }
 }
 
@@ -197,9 +210,12 @@
   border: 2px solid map.get($colors, "darkBlue");
   border-radius: 64px;
   outline: none;
-  font-size: 2.3rem;
+  font-size: 1.6rem;
   margin-top: 3rem;
   background: transparent;
+  @include lg {
+    font-size: 2.3rem;
+  }
 }
 
 .accordion-button:hover {
@@ -210,8 +226,7 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.15s ease-out;
-  padding: 0 18px;
-  background-color: white;
+  padding: clamp(1rem, 2vw, 3rem);
 }
 
 .active + .panel {
@@ -223,17 +238,30 @@
   display: none;
 }
 
-.accordion-button .open-accordion {
-  display: inline-block;
+.accordion-button.active + .panel {
+  max-height: none;
 }
 
-.accordion-button.active .open-accordion {
+.accordion-button[aria-expanded="true"] .close-accordion {
+  display: block;
+}
+
+.accordion-button[aria-expanded="true"] .open-accordion {
   display: none;
 }
 
-.accordion-button.active .close-accordion {
-  display: inline-block;
+.accordion-button[aria-expanded="false"] .close-accordion {
+  display: none;
 }
-.accordion-button.active + .panel {
-  max-height: none;
+
+.accordion-button[aria-expanded="false"] .open-accordion {
+  display: block;
+}
+
+// end of accordion
+.section-padding {
+  margin-top: clamp(1.5rem, 1.75vw, 2rem);
+  padding-top: clamp(1.75rem, 2vw, 6rem);
+  margin-bottom: clamp(1.5rem, 1.75vw, 2rem);
+  padding-bottom: clamp(1.75rem, 2vw, 6rem);
 }

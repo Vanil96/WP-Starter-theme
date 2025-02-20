@@ -7,7 +7,7 @@
 
 ?>
     <div class=hero-container_inner>
-        <p class="subtitle">Patrycja Kościelniak <?php echo $groupName['title_extend']; ?> </p>
+        <p class="subtitle"><?php echo $groupName['title_extend']; ?> </p>
       
         <h1 class="title font-mixed">
             <?php echo $groupName['title']; ?>

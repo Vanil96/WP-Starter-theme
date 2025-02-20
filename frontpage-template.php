@@ -15,18 +15,15 @@ get_header();
 
         <main class="site-main" role="main">
             <section class="main_inner">
-
-                <section class="container mt-8 container-w" id="about-me">
+                <section class="container section-padding container-w" id="about-me">
                     <?php
-                    $img = get_field('about_me')['img'];
-                        
-                    ?>
+                    $img = get_field('about_me')['img'];  ?>
                     <div class="row justify-space-between">
                         <div class="col-12 col-md-6 text-center">
                             <img src="<?php echo esc_url($img['url'] ?? imgPath() . 'photo_1.png'); ?>"
                                 alt="<?php echo esc_attr($image['alt'] ?? 'Patrycja Kościelniak psycholog rzeszów'); ?>">
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6 pt-4">
                             <div class="flex flex-column gap-4 justify-center h-100">
 
                                 <h2 class="subtitle">
@@ -34,7 +31,7 @@ get_header();
 
                                 </h2>
 
-                                <div class="text-lg">
+                                <div class="sm:text-lg">
                                     <?php echo acfField('about_me', 'content');?>
                                 </div>
 
@@ -42,17 +39,14 @@ get_header();
                                     <a class="btn"
                                         href="<?php echo esc_attr(acfField('about_me', 'btn_url'));?>"><?php echo acfField('about_me', 'btn_name');?></a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
-                    <div></div>
                 </section>
 
-                <section class="container mt-8 container-w text-center" id="offer">
-                    <h2 class="subtitle">Oferta</h2>
-                    <p class="large-subtitle">Oferuję pomoc w <span>następujących obszarach:</span> </p>
+                <section class="container section-padding container-w " id="offer">
+                    <h2 class="subtitle text-center">Oferta</h2>
+                    <p class="large-subtitle text-center">Oferuję pomoc w <span>następujących obszarach:</span> </p>
                     <section class="splide" id="offer-slider">
                         <div class=splide__track>
 
@@ -63,16 +57,16 @@ get_header();
                     </section>
                 </section>
 
-                <section class="container mt-8 container-w text-center">
+                <section class="container section-padding container-w text-center">
                     <p class="large-subtitle">
                     <?php echo acfField('teaser_1', 'content');?>
                     </p>
                     <a class="btn"
                     href="<?php echo esc_attr(acfField('teaser_1', 'btn_url'));?>"><?php echo acfField('teaser_1', 'btn_name');?></a>                </section>
 
-                <section class="container mt-8 container-w text-center has-slider" id="services">
-                    <h2 class="subtitle">Opinie</h2>
-                    <p class="large-subtitle"><span>Opinie</span> moich klientów</p>
+                <section class="container section-padding container-w has-slider" id="services">
+                    <h2 class="subtitle text-center">Opinie</h2>
+                    <p class="large-subtitle text-center"><span>Opinie</span> moich klientów</p>
 
                     <section class="splide" id="opinion-slider">
                         <div class=splide__track>
@@ -81,13 +75,12 @@ get_header();
                             </ul>
                         </div>
                     </section>
-
                 </section>
 
 
-                <section class="container mt-8 container-w text-center" id="services">
-                    <h2 class="subtitle">FAQ</h2>
-                    <p class="large-subtitle">Najczęściej zadawane <span>pytania</span> </p>
+                <section class="container section-padding container-w" id="services">
+                    <h2 class="subtitle text-center">FAQ</h2>
+                    <p class="large-subtitle text-center">Najczęściej zadawane <span>pytania</span> </p>
                     <section class="accordion">
                         <?php display_faq(); ?>
                     </section>

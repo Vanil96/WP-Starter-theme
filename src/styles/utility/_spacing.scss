@@ -1,3 +1,5 @@
+@use "../shared/variables" as *;
+
 $spacing-sizes: (
   0: 0,
   1: 0.5rem,   // 5px
@@ -13,32 +15,33 @@ $spacing-sizes: (
 );
 
 
-// Usage: <div class="mt-2 mb-2"></div>
-@mixin generate-margins {
+@mixin generate-spacing($type, $property) {
   @each $size, $value in $spacing-sizes {
-    .m-#{$size} { margin: $value !important; }
-    .mt-#{$size} { margin-top: $value !important; }
-    .mr-#{$size} { margin-right: $value !important; }
-    .mb-#{$size} { margin-bottom: $value !important; }
-    .ml-#{$size} { margin-left: $value !important; }
+    .#{$type}-#{$size} { #{$property}: $value !important; }
+
+    @each $bp, $width in $breakpoints {
+      @media (min-width: #{$width}) {
+        .#{$bp}\:#{$type}-#{$size} {  // Escaping ":" for correct class name
+          #{$property}: $value !important;
+        }
+      }
+    }
   }
 }
 
-@include generate-margins;
+// Margins
+@include generate-spacing("m", "margin");
+@include generate-spacing("mt", "margin-top");
+@include generate-spacing("mr", "margin-right");
+@include generate-spacing("mb", "margin-bottom");
+@include generate-spacing("ml", "margin-left");
 
-// Usage: <div class="pl-2 pt-4"></div>
-@mixin generate-paddings {
-  @each $size, $value in $spacing-sizes {
-    .p-#{$size} { padding: $value !important; }
-    .pt-#{$size} { padding-top: $value !important; }
-    .pr-#{$size} { padding-right: $value !important; }
-    .pb-#{$size} { padding-bottom: $value !important; }
-    .pl-#{$size} { padding-left: $value !important; }
-  }
-}
-
-@include generate-paddings;
-
+// Paddings
+@include generate-spacing("p", "padding");
+@include generate-spacing("pt", "padding-top");
+@include generate-spacing("pr", "padding-right");
+@include generate-spacing("pb", "padding-bottom");
+@include generate-spacing("pl", "padding-left");
 
 //additional utilites class
 .m-auto {
