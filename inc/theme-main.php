@@ -100,7 +100,7 @@ function display_opinions() {
             $visible = get_sub_field('visible');
             if ($visible): ?>
 <li class="splide__slide">
-    <div class="slide-container">
+    <div class="single-slide">
         <div class="card-opinion">
             <div class="card-opinion_desc">
                 <p>
@@ -125,7 +125,7 @@ function display_offers_short($post_id) {
 			$default_image_url = imgPath() . 'placeholder.png'; 
             if ($visible): ?>
 		<li class="splide__slide">
-  		  <div class="slide-container">
+  		  <div class="single-slide">
       		  <div class="card-image" style="background-color:<?php the_sub_field('color') ?>">
           	  <div class="card-image_image">
 

@@ -103,8 +103,8 @@
 .large-subtitle {
   font-size: 1.6rem;
   font-weight: 300;
-  margin-top:1rem;
-  margin-bottom: 1.5rem 0;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 
   @include sm {
     font-size: 2.2rem;
@@ -183,20 +183,52 @@
   }
 }
 
-.slide-container {
+.single-slide {
   width: 100%;
   > div {
     margin: auto;
   }
 }
 
+.splide {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  margin-bottom:4rem;
+  .splide__arrow {
+    background: transparent;
+    svg {
+      fill: map.get($colors, "orange");
+      width: 2.2em;
+      height: 2.2em;
+    }
+  }
+  .splide__arrow--prev {
+    left: 10px;
+  }
+  .splide__arrow--next {
+    right: 10px;
+  }
+}
+
+.splide__pagination {
+  bottom: -30px !important;
+}
+
+.splide__pagination__page {
+  background: #9b9393ab !important;
+}
+
+.splide__pagination__page.is-active {
+  background: map.get($colors, "darkBlue") !important;
+}
+
 @include lg {
-  div .splide__arrow--prev {
-    left: -40px;
-  }
-  div .splide__arrow--next {
-    right: -40px;
-  }
+  // div .splide__arrow--prev {
+  //   left: -40px;
+  // }
+  // div .splide__arrow--next {
+  //   right: -40px;
+  // }
 }
 
 .accordion-button {
@@ -226,7 +258,8 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.15s ease-out;
-  padding: clamp(1rem, 2vw, 3rem);
+  padding: clamp(1rem, 2vw, 3rem) clamp(1rem, 4vw, 6rem);
+  max-width: 1250px;
 }
 
 .active + .panel {
@@ -257,11 +290,243 @@
 .accordion-button[aria-expanded="false"] .open-accordion {
   display: block;
 }
-
 // end of accordion
+
+.faq-container {
+  max-width: 920px;
+  margin: auto;
+}
+
 .section-padding {
   margin-top: clamp(1.5rem, 1.75vw, 2rem);
   padding-top: clamp(1.75rem, 2vw, 6rem);
   margin-bottom: clamp(1.5rem, 1.75vw, 2rem);
   padding-bottom: clamp(1.75rem, 2vw, 6rem);
+}
+
+.separator-x {
+  width: 100%;
+  height: 1px;
+  margin: auto;
+  background-color: map.get($colors, "darkBlue");
+}
+
+.main-footer {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  .logo {
+    max-height: 280px;
+    width: 100px;
+    max-width: 100%;
+    object-fit: contain;
+
+    @include sm {
+      width: 140px;
+    }
+
+    @include xl {
+      width: 230px;
+    }
+  }
+
+  &_cols {
+    border-top: 1px solid map.get($colors, "darkBlue");
+    min-height: 250px;
+
+    border-bottom: 1px solid map.get($colors, "darkBlue");
+    border-top: 1px solid map.get($colors, "darkBlue");
+
+    padding-top: clamp(2.5rem, 2vw, 5rem);
+    padding-bottom: clamp(2.5rem, 2vw, 5rem);
+
+    & > div {
+      text-align: center;
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      @include sm {
+        .social-icons {
+          justify-content: start;
+        }
+      }
+
+      &:nth-child(2) {
+        @include sm {
+          text-align: inherit;
+          padding-left: 4rem;
+        }
+      }
+
+      &:nth-child(3) {
+        display: none;
+        @include sm {
+          display: block;
+          text-align: inherit;
+          padding-left: 4rem;
+        }
+      }
+
+      &:nth-child(4) {
+        display: none;
+        @include sm {
+          text-align: inherit;
+          display: block;
+        }
+      }
+    }
+  }
+
+  &_bar {
+    padding-top: clamp(1.25rem, 1.7vw, 3rem);
+    padding-bottom: clamp(1.25rem, 1.7vw, 3rem);
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+.footer-nav {
+  li {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.links-line-hover a {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 3px;
+}
+
+.links-line-hover a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: map.get($colors, "darkBlue");
+  transition: width 0.25s ease-in-out;
+}
+
+.links-line-hover a:hover::after {
+  width: 100%;
+}
+// Kontener formularza
+.cf7-custom {
+  max-width: 670px;
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  @include xl {
+    margin: 0 0 0 auto;
+  }
+
+  .cf7-row {
+    display: flex;
+    gap: 10px;
+
+    input {
+      width: 50%;
+    }
+  }
+
+  // Stylowanie pól formularza
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid map.get($colors, "darkBlue");
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
+
+    &::placeholder {
+      color: map.get($colors, "darkBlue");
+      opacity: 1;
+    }
+
+    &:focus {
+      border-color: #58abe2;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+  }
+
+  textarea {
+    height: 120px;
+    resize: vertical;
+  }
+
+  input[type="submit"] {
+    display: inline-block;
+    border-radius: 30px;
+    font-size: 1.6rem;
+    color: map.get($font-colors, "btn-default");
+    background-color: map.get($background-colors, "btn-default");
+    border: 2px solid map.get($colors, "darkBlue");
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 0.5em 1.25em;
+
+    &:hover {
+      color: map.get($font-colors, "btn-default-hover");
+      background-color: map.get($background-colors, "btn-default-hover");
+    }
+  }
+
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .wpcf7-list-item {
+    margin-bottom: 1.2rem;
+  }
+
+  .wpcf7-not-valid-tip {
+    margin-top: 2px;
+  }
+  .wpcf7-spinner {
+    width: 0;
+    margin: 0;
+  }
+  form.submitting .wpcf7-spinner {
+    width: 24px;
+    margin: 0 24px;
+  }
+
+  .submit {
+    text-align: right;
+  }
+}
+
+@include max-sm {
+  #about-me {
+    text-align: center;
+  }
+  .cf7-custom {
+    padding: 15px;
+
+    .cf7-row {
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
 }

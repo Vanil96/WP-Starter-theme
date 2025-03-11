@@ -44,7 +44,7 @@ get_header();
                     </div>
                 </section>
 
-                <section class="container section-padding container-w " id="offer">
+                <section class="container section-padding container-w" id="offer">
                     <h2 class="subtitle text-center">Oferta</h2>
                     <p class="large-subtitle text-center">Oferuję pomoc w <span>następujących obszarach:</span> </p>
                     <section class="splide" id="offer-slider">
@@ -81,7 +81,7 @@ get_header();
                 <section class="container section-padding container-w" id="services">
                     <h2 class="subtitle text-center">FAQ</h2>
                     <p class="large-subtitle text-center">Najczęściej zadawane <span>pytania</span> </p>
-                    <section class="accordion">
+                    <section class="faq-container">
                         <?php display_faq(); ?>
                     </section>
                 </section>

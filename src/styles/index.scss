@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font-size: map.get($font-sizes, "body-font");
+  font-size: map.get($font-sizes, "default");
   line-height: 1.25;
   color: map.get($font-colors, "theme");
   min-height: 100vh;
@@ -59,7 +59,6 @@ hr {
 #page {
   max-width: 1920px;
   margin: auto;
-  padding-bottom:150px;
 }
 
 

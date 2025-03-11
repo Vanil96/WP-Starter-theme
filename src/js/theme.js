@@ -52,9 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
         perPage: 1,
         mediaQuery: "min",
         gap: "10px",
+        arrows:false,
         breakpoints: {
           680: {
             perPage: 2,
+            arrows: true,
           },
           1240: {
             perPage: 3,
@@ -76,11 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
         gap: "10px",
         arrows: false,
         breakpoints: {
-          480: {
-            arrows: true,
-          },
           680: {
             perPage: 2,
+            arrows: true,
           },
           1240: {
             perPage: 3,
