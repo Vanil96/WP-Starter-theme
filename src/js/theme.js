@@ -92,4 +92,39 @@ document.addEventListener("DOMContentLoaded", () => {
       }).mount();
     }
 
+
+//Menu toggle on scroll
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  const navbar = document.getElementById("navbar");
+
+  // Dodaje klasę 'sticky', jeśli jesteśmy na górze strony
+  if (currentScrollPos === 0) {
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+
+  if (prevScrollpos > currentScrollPos) {
+    navbar.classList.add("visible");
+    navbar.classList.remove("hidden");
+  } else {
+    navbar.classList.add("hidden");
+    navbar.classList.remove("visible");
+  }
+  prevScrollpos = currentScrollPos; // Aktualizuje poprzednią pozycję scrolla
+}
+
+window.onload = function() {
+  const navbar = document.getElementById("navbar");
+  // Upewniamy się, że klasa 'sticky' jest ustawiona po załadowaniu strony
+  if (window.pageYOffset === 0) {
+    navbar.classList.add("sticky");
+  }
+}
+
+
+
 }); //DOM loaded

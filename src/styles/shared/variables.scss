@@ -16,7 +16,7 @@ $colors: (
   "error": red,
   //additional
   "background": #f2efe1,
-  "dark": #171a18,
+  "dark": #191F37,
   "white": #f1f1f1
 );
 
@@ -41,8 +41,8 @@ $fonts: (
 
 // Font colors map
 $font-colors: (
-  "theme": map.get($colors, "darkBlue"),
-  "secondary": map.get($colors, "orange"),
+  "theme": map.get($colors, "dark"),
+  "secondary": map.get($colors, "darkBlue"),
   "btn-default": map.get($colors, "dark"),
   "btn-default-hover": map.get($colors, "white"),
   "menu-links": inherit,

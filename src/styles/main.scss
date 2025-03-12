@@ -82,6 +82,7 @@
 }
 
 .title {
+  color:map.get($colors, "darkBlue");
   font-size: 3.4rem;
   @include sm {
     font-size: 4.2rem;
@@ -101,6 +102,7 @@
 }
 
 .large-subtitle {
+  color:map.get($colors, "darkBlue");
   font-size: 1.6rem;
   font-weight: 300;
   margin-top: 1rem;
@@ -222,16 +224,10 @@
   background: map.get($colors, "darkBlue") !important;
 }
 
-@include lg {
-  // div .splide__arrow--prev {
-  //   left: -40px;
-  // }
-  // div .splide__arrow--next {
-  //   right: -40px;
-  // }
-}
+@include lg {}
 
 .accordion-button {
+  color:map.get($colors, "darkBlue");
   display: flex;
   align-items: center;
   gap: 10px;
@@ -395,6 +391,7 @@
 .footer-nav {
   li {
     margin-bottom: 0.75rem;
+    a {padding:0.45em 0.45em 3px 0;}
   }
 }
 

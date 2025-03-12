@@ -1,4 +1,6 @@
 @use "shared/variables" as *;
+@use "shared/mixins" as *;
+@use "sass:map";
 
 $mask-color: #424242d1;
 $mb-header-padding: 1rem;
@@ -9,7 +11,6 @@ $mb-menu-beakpoint: 960px;
   display: flex;
   justify-content: space-between;
   width: 95%;
-  padding: 2.5rem 1.5rem;
   margin: auto;
   max-width: 2400px;
 
@@ -30,52 +31,60 @@ $mb-menu-beakpoint: 960px;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+
+    .menu-item a {
+      padding: 0.5em;
+    }
   }
 
   .page-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
     img {
       display: block;
       max-width: 100%;
       height: auto;
       object-fit: contain;
       max-height: 100%;
-      width: auto;
+      width: 35px;
+    }
+
+    .caption {
+      display: none;
+    }
+
+    @include lg {
+      img {
+        width: 55px;
+      }
+      .caption {
+        display: block;
+        font-weight: 400;
+        padding-right: 1rem;
+        opacity: 1;
+        color: map.get($colors, "darkBlue");
+
+        .large {
+          font-size: 1.9rem;
+        }
+        .small {
+          font-size: 1.4rem;
+        }
+      }
     }
   }
 }
 
-.social-nav {
+.social-wrapper {
   a {
-    font-size: 0;
-
-    &::before {
-      content: "";
-      display: block;
-      width: 1.5rem;
-      height: 100%;
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
+    svg {
+      height: 22px;
     }
   }
-
-  .instagram a::before {
-  //  background-image: url("#{$assets}img/instagram.svg");
-  }
-
-  .linkedin a::before {
-   // background-image: url("#{$assets}img/linkedin.svg");
-  }
-
-  .pinterest a::before {
-   // background-image: url("#{$assets}img/pinterest.svg");
-  }
-
-  .behance a::before {
-    width: 1.7rem;
-   // background-image: url("#{$assets}img/behance.svg");
-  }
-
+  padding-left: 1.5rem;
+  border-left: 1px solid map.get($colors, "darkBlue");
 }
 
 #mb-menu-toggler {
@@ -83,7 +92,7 @@ $mb-menu-beakpoint: 960px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
- // background-image: url("#{$assets}img/list.svg");
+  // background-image: url("#{$assets}img/list.svg");
   min-height: 2.5rem;
   min-width: 2.5rem;
   border: 0;
@@ -91,7 +100,7 @@ $mb-menu-beakpoint: 960px;
 }
 
 .mobile-menu--open #mb-menu-toggler {
-//  background-image: url("#{$assets}img/exit.svg");
+  //  background-image: url("#{$assets}img/exit.svg");
 }
 
 @media (max-width: $mb-menu-beakpoint) {
@@ -149,4 +158,64 @@ $mb-menu-beakpoint: 960px;
       background: $mask-color;
     }
   }
+}
+
+//managment of toggle navbar on scroll
+$heightNavbar: 125px;
+#page {
+  padding-top: $heightNavbar;
+}
+
+//add transitions
+#navbar {
+  .page-logo img {
+    transition: 0.3s;
+  }
+  .caption {
+    transition: 0.3s;
+  }
+}
+
+#navbar {
+  z-index: 999;
+  position: fixed;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  max-width: 1920px;
+  transition:
+    top 0.3s,
+    padding 0.3s ease;
+  top: 0;
+  background-color: map.get($colors, "background");
+}
+
+#navbar.visible {
+  top: 0;
+}
+
+#navbar.visible:not(.sticky) {
+  padding: 0px 1.5rem;
+  border: 1px solid red;
+  .caption {
+    opacity: 0;
+    line-height: 1em;
+  }
+  .page-logo img {
+    width: 33px;
+  }
+}
+
+#navbar.hidden {
+  top: -$heightNavbar;
+  .caption {
+    opacity: 0;
+    line-height: 1em;
+  }
+  .page-logo img {
+    width: 33px;
+  }
+}
+
+#navbar.sticky {
+  padding: 2.5rem 1.5rem;
 }

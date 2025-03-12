@@ -1,5 +1,5 @@
 <nav class="main-nav">
-    <div class="main-nav_inner">
+    <div class="main-nav_inner links-line-hover">
 
 <?php
  wp_nav_menu(
