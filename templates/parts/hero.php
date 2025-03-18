@@ -6,14 +6,14 @@
 
 
 ?>
-    <div class=hero-container_inner>
-        <p class="subtitle"><?php echo $groupName['title_extend']; ?> </p>
+    <div class="hero-container_inner">
+        <p class="subtitle fadeInFromTop"><?php echo $groupName['title_extend']; ?> </p>
       
-        <h1 class="title font-mixed">
+        <h1 class="title font-mixed fadeInFromTop">
             <?php echo $groupName['title']; ?>
         </h1>
 
-        <div><a class="btn" href="<?php echo esc_attr($groupName['btn_url']); ?>"> <?php echo $groupName['btn_name']; ?></a>
+        <div class="popInText"><a class="btn" href="<?php echo esc_attr($groupName['btn_url']); ?>"> <?php echo $groupName['btn_name']; ?></a>
         </div>
     </div>
 

@@ -10,11 +10,11 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<header class="page-header container container-w">
 
 		<?php
 		the_title(
-			sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+			sprintf( '<h3 class="page-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
 			'</a></h3>'
 		);
 		?>
@@ -31,13 +31,13 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
+	<div class="entry-summary container container-w">
 
 		<?php the_excerpt(); ?>
 
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer container container-w">
 
 		<?php wps_entry_footer(); ?>
 

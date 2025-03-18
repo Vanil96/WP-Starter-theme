@@ -8,6 +8,20 @@
 @use "nav";
 @use "sass:map";
 
+
+body {
+  opacity: 0;
+  animation: fadeInAnimation ease-in .3s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes fadeInAnimation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
 //btns
 .btn {
   display: inline-block;
@@ -77,12 +91,16 @@
   }
 }
 
+.container-sm {
+  max-width: 1100px;
+}
+
 .btn-icon {
   background-color: transparent;
 }
 
 .title {
-  color:map.get($colors, "darkBlue");
+  color: map.get($colors, "darkBlue");
   font-size: 3.4rem;
   @include sm {
     font-size: 4.2rem;
@@ -102,14 +120,14 @@
 }
 
 .large-subtitle {
-  color:map.get($colors, "darkBlue");
-  font-size: 1.6rem;
+  color: map.get($colors, "darkBlue");
+  font-size: 2.5rem;
   font-weight: 300;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
 
   @include sm {
-    font-size: 2.2rem;
+    // font-size: 2.2rem;
   }
 
   @include lg {
@@ -119,6 +137,25 @@
 
   @include xl {
     font-size: 4.8rem;
+  }
+
+  @extend .font-mixed;
+}
+
+.page-title {
+  color: map.get($colors, "darkBlue");
+  font-size: 2.8rem;
+  font-weight: 300;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+
+  @include sm {
+    font-size: 3.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @include xl {
+    font-size: 5.8rem;
   }
 
   @extend .font-mixed;
@@ -195,7 +232,7 @@
 .splide {
   padding-left: 5rem;
   padding-right: 5rem;
-  margin-bottom:4rem;
+  margin-bottom: 4rem;
   .splide__arrow {
     background: transparent;
     svg {
@@ -224,10 +261,11 @@
   background: map.get($colors, "darkBlue") !important;
 }
 
-@include lg {}
+@include lg {
+}
 
 .accordion-button {
-  color:map.get($colors, "darkBlue");
+  color: map.get($colors, "darkBlue");
   display: flex;
   align-items: center;
   gap: 10px;
@@ -391,7 +429,9 @@
 .footer-nav {
   li {
     margin-bottom: 0.75rem;
-    a {padding:0.45em 0.45em 3px 0;}
+    a {
+      padding: 0.45em 0.45em 3px 0;
+    }
   }
 }
 
@@ -511,6 +551,52 @@
   }
 }
 
+.page-header {
+  margin-top: clamp(3rem, 3vw, 5rem);
+  margin-bottom: clamp(3rem, 3vw, 5rem);
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: fadeInAnimation 1s ease-out forwards;
+}
+
+.offer-list {
+  &_container {
+  }
+  &_single {
+    display: flex;
+    align-items: center;
+    gap: clamp(2.5rem, 3vw, 7rem);
+    margin-bottom: clamp(5rem, 5vw, 10rem);
+    &:nth-child(even) {
+      .offer-list_image {
+        order: 2;
+        > div {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+  &_content {
+    flex: 2;
+    order: 1;
+  }
+  &_image {
+    flex: 1;
+    max-width: 300px;
+    > div {
+      max-width: 100%;
+      width: 240px;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+  }
+}
+
 @include max-sm {
   #about-me {
     text-align: center;
@@ -524,6 +610,62 @@
       input {
         width: 100%;
       }
+    }
+  }
+
+  .offer-list {
+    &_single {
+      display: block;
+    }
+    &_image {
+      margin: auto;
+      > div {
+        margin: auto;
+      }
+    }
+    &_content {
+      text-align: center;
+    }
+  }
+}
+
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+
+  table {
+    width: 100%;
+
+    td,
+    th {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    tr th {
+      color: #F65451;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding-bottom:0.5rem;
+    }
+
+    tr td {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      font-size: 1.6rem;
+      color:map.get($colors, 'darkBlue');
+
+      @include sm {
+        font-size: 1.8rem;
+      }
+
+      @include lg {
+        font-size: 2.3rem;
+      }
+    }
+
+    tr:not(:last-child) {
+      border-bottom: 1px solid #29335c3d;
     }
   }
 }

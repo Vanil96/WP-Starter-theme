@@ -12,13 +12,13 @@ defined( 'ABSPATH' ) || exit;
  
 <section class="no-results not-found">
 
-	<header class="page-header">
+	<header class="page-header container container-w">
 
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'understrap' ); ?></h1>
 
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="page-content container container-w">
 
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :

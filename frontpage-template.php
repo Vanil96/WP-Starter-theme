@@ -15,7 +15,7 @@ get_header();
 
         <main class="site-main" role="main">
             <section class="main_inner">
-                <section class="container section-padding container-w" id="about-me">
+                <section class="container section-padding container-w fadeInOnScroll" id="about-me">
                     <?php
                     $img = get_field('about_me')['img'];  ?>
                     <div class="row justify-space-between">
@@ -44,11 +44,11 @@ get_header();
                     </div>
                 </section>
 
-                <section class="container section-padding container-w" id="offer">
+                <section class="container section-padding container-w fadeInOnScroll" id="offer">
                     <h2 class="subtitle text-center">Oferta</h2>
                     <p class="large-subtitle text-center">Oferuję pomoc w <span>następujących obszarach:</span> </p>
                     <section class="splide" id="offer-slider">
-                        <div class=splide__track>
+                        <div class="splide__track">
 
                             <ul class="splide__list">
                                 <?php display_offers_short(29) ?>
@@ -57,14 +57,14 @@ get_header();
                     </section>
                 </section>
 
-                <section class="container section-padding container-w text-center">
+                <section class="container section-padding container-w text-center fadeInOnScroll">
                     <p class="large-subtitle">
                     <?php echo acfField('teaser_1', 'content');?>
                     </p>
                     <a class="btn"
                     href="<?php echo esc_attr(acfField('teaser_1', 'btn_url'));?>"><?php echo acfField('teaser_1', 'btn_name');?></a>                </section>
 
-                <section class="container section-padding container-w has-slider" id="services">
+                <section class="container section-padding container-w has-slider fadeInOnScroll" id="services">
                     <h2 class="subtitle text-center">Opinie</h2>
                     <p class="large-subtitle text-center"><span>Opinie</span> moich klientów</p>
 
@@ -78,7 +78,7 @@ get_header();
                 </section>
 
 
-                <section class="container section-padding container-w" id="services">
+                <section class="container section-padding container-w fadeInOnScroll" id="services">
                     <h2 class="subtitle text-center">FAQ</h2>
                     <p class="large-subtitle text-center">Najczęściej zadawane <span>pytania</span> </p>
                     <section class="faq-container">

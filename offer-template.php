@@ -6,7 +6,6 @@ defined( 'ABSPATH' ) || exit;
 get_header(); 
 ?>
 
-<?php get_template_part( 'templates/parts/hero' ); ?>
 
 <section class="wrapper" id="page-wrapper">
     <div class="wrapper_inner" id="content" tabindex="-1">
@@ -16,46 +15,49 @@ get_header();
         <main class="site-main" role="main">
             <section class="main_inner">
 
-                <section class="container mt-8 container-w" id="about-me">
-                    <div class="row justify-space-between">
-                        <div class="col-12 col-md-6 text-center">
-                            <img src="<?php echo imgPath() ?>photo_1.png" alt="Patrycja Kościelniak psycholog rzeszów">
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="flex flex-column gap-4 justify-center h-100">
+                <section class="page-header container container-w">
+                    <h1 class="subtitle">Oferta</h1>
+                    <h2 class="page-title"> <?php echo the_field('page-title');?>
+                    </h2>
 
-                                <h2 class="subtitle">
-                                    Kilka słów o mnie
-                                </h2>
+                </section>
 
-                                <p class="text-lg">
-                                    W swojej pracy dążę do tego, aby patrzeć na każde dziecko i młodzież w sposób
-                                    indywidualny oraz holistyczny. Całościowe spojrzenie jest – moim zdaniem –
-                                    niezbędne,
-                                    aby jak najefektywniej móc pomóc. Mój gabinet jest miejscem wolnym od oceniania. Za
-                                    to
-                                    znajdują się w nim empatia, chęć pomocy, wsparcie.
-                                </p>
 
-                                <div>
-                                    <button class="btn">Porozmawiajmy</button>
+                <section class="container section-padding container-sm">
+                    <div class="offer-list_container">
+
+                        <?php
+                    if (have_rows('offer_list')): ?>
+                        <?php while (have_rows('offer_list')): the_row(); 
+                    $visible = get_sub_field('visible');
+                    $image = get_sub_field('img'); 
+                    $default_image_url = imgPath() . 'placeholder.png'; 
+                    if ($visible): ?>
+
+                        <div class="offer-list_single fadeInOnScroll">
+                            <div class="offer-list_image">
+                                <div style="background-color:<?php the_sub_field('color') ?>" class="shadow">
+                                    <img src="<?php echo esc_url($image['url'] ?? $default_image_url); ?>"
+                                        alt="<?php echo esc_attr($image['alt'] ?? 'Default image'); ?>">
                                 </div>
+                            </div>
 
+                            <div class="offer-list_content">
+                                <h3 class="large-subtitle"> <?php the_sub_field('title'); ?>
+                                </h3>
+
+                                <p class="text-sm"><?php the_sub_field('content'); ?> </p>
                             </div>
                         </div>
+                        <?php endif; endwhile; ?>
+                        <?php endif;
+        
+                        ?>
+
                     </div>
 
-                    <div></div>
                 </section>
 
-
-                <section class="container mt-8 container-w text-center" id="services">
-                    <h2 class="subtitle">FAQ</h2>
-                    <p class="large-subtitle">Najczęściej zadawane <span>pytania</span> </p>
-                    <section class="accordion">
-                        <?php display_faq(); ?>
-                    </section>
-                </section>
             </section> <!-- /main_inner -->
         </main>
 

@@ -125,6 +125,30 @@ window.onload = function() {
   }
 }
 
+//fade in section on scroll
+const elements = document.querySelectorAll('.fadeInOnScroll');
+
+function isVisible(elem) {
+    let bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top + 100 < (window.innerHeight || document.documentElement.clientHeight) && 
+        bounding.top + 100 > 0
+    );
+}
+
+function checkVisibility() {
+    for (let i = 0; i < elements.length; i++) {
+        if (isVisible(elements[i])) {
+            elements[i].style.opacity = 1;
+            elements[i].style.transform = 'translateY(0)';
+        }
+    }
+}
+
+window.addEventListener('scroll', checkVisibility);
+checkVisibility();
+
+
 
 
 }); //DOM loaded
