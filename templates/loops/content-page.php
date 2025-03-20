@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="page-header container container-w">
+	<header class="page-header">
 
 		<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 
@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<div class="entry-content container container-w">
+	<div class="entry-content">
 
 		<?php
 		the_content();
@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
 
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer container container-w">
+	<footer class="entry-footer">
 
 		<?php wps_edit_post_link(); ?>
 

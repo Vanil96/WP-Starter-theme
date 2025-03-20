@@ -7,43 +7,22 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
-
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
-	<header class="entry-header container container-w">
-
-		<?php
+    <div class="post-card shadow mb-6">
+      
+      <?php
 		the_title(
-			sprintf( '<h2 class="page-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+			sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
 			'</a></h2>'
-		);
-		?>
+		); ?>
 
-		<?php if ( 'post' === get_post_type() ) : ?>
+        <a href="<?php the_permalink(); ?>" rel="bookmark" class="img-url">
+            <?php echo get_the_post_thumbnail( $post->ID, 'small' ); ?>
+        </a>
 
-			<div class="entry-meta">
-				<?php wps_posted_on(); ?>
-			</div><!-- .entry-meta -->
 
-		<?php endif; ?>
-
-	</header><!-- .entry-header -->
-
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-
-	<div class="entry-content container container-w">
-
-		<?php
-		the_excerpt();
-		wps_link_pages();
-		?>
-
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer container container-w">
-
-		<?php wps_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
+        <div class="post-content">
+            <div class="excerpt"> <?php the_excerpt();?> </div>
+        </div>
+    </div>
 </article><!-- #post-## -->

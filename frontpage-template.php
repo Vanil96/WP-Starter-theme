@@ -46,7 +46,7 @@ get_header();
 
                 <section class="container section-padding container-w fadeInOnScroll" id="offer">
                     <h2 class="subtitle text-center">Oferta</h2>
-                    <p class="large-subtitle text-center">Oferuję pomoc w <span>następujących obszarach:</span> </p>
+                    <h3 class="large-subtitle text-center">Oferuję pomoc w <span>następujących obszarach:</span> </h3>
                     <section class="splide" id="offer-slider">
                         <div class="splide__track">
 
@@ -59,14 +59,15 @@ get_header();
 
                 <section class="container section-padding container-w text-center fadeInOnScroll">
                     <p class="large-subtitle">
-                    <?php echo acfField('teaser_1', 'content');?>
+                        <?php echo acfField('teaser_1', 'content');?>
                     </p>
                     <a class="btn"
-                    href="<?php echo esc_attr(acfField('teaser_1', 'btn_url'));?>"><?php echo acfField('teaser_1', 'btn_name');?></a>                </section>
+                        href="<?php echo esc_attr(acfField('teaser_1', 'btn_url'));?>"><?php echo acfField('teaser_1', 'btn_name');?></a>
+                </section>
 
                 <section class="container section-padding container-w has-slider fadeInOnScroll" id="services">
                     <h2 class="subtitle text-center">Opinie</h2>
-                    <p class="large-subtitle text-center"><span>Opinie</span> moich klientów</p>
+                    <h3 class="large-subtitle text-center"><span>Opinie</span> moich klientów</h3>
 
                     <section class="splide" id="opinion-slider">
                         <div class=splide__track>
@@ -77,10 +78,35 @@ get_header();
                     </section>
                 </section>
 
+                <section class="container section-padding container-w fadeInOnScroll" id="blog">
+                    <h2 class="subtitle text-center">BLOG</h2>
+                    <h3 class="large-subtitle text-center">Najnowsze wpisy <span>blogowe</span> </h3>
+
+                    <?php
+                    $args = array(
+                        'post_type'      => 'post',  
+                        'posts_per_page' => 4,       
+                        'orderby'        => 'date', 
+                        'order'          => 'DESC'  
+                    );
+
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) : ?>
+                    <div class="post-container">
+                        <?php while ($query->have_posts()) : $query->the_post(); ?>
+                        <?php get_template_part('templates/loops/content', get_post_format()); ?>
+                        <?php endwhile; ?>
+                    </div>
+                    <?php wp_reset_postdata();  ?>
+                    <?php endif; ?>
+
+                </section>
+
 
                 <section class="container section-padding container-w fadeInOnScroll" id="services">
                     <h2 class="subtitle text-center">FAQ</h2>
-                    <p class="large-subtitle text-center">Najczęściej zadawane <span>pytania</span> </p>
+                    <h3 class="large-subtitle text-center">Najczęściej zadawane <span>pytania</span> </h3>
                     <section class="faq-container">
                         <?php display_faq(); ?>
                     </section>

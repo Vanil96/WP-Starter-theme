@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="page-header container container-w">
+	<header class="page-header">
 
 		<?php
 		the_title(
@@ -31,13 +31,13 @@ defined( 'ABSPATH' ) || exit;
 
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary container container-w">
+	<div class="entry-summary">
 
 		<?php the_excerpt(); ?>
 
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer container container-w">
+	<footer class="entry-footer">
 
 		<?php wps_entry_footer(); ?>
 

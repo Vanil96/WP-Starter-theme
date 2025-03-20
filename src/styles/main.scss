@@ -8,19 +8,20 @@
 @use "nav";
 @use "sass:map";
 
-
 body {
   opacity: 0;
-  animation: fadeInAnimation ease-in .3s;
+  animation: fadeInAnimation ease-in 0.3s;
   animation-fill-mode: forwards;
 }
 
-
 @keyframes fadeInAnimation {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
 
 //btns
 .btn {
@@ -230,8 +231,8 @@ body {
 }
 
 .splide {
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 0;
+  padding-right: 0;
   margin-bottom: 4rem;
   .splide__arrow {
     background: transparent;
@@ -247,6 +248,11 @@ body {
   .splide__arrow--next {
     right: 10px;
   }
+
+  @include md {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 }
 
 .splide__pagination {
@@ -259,9 +265,6 @@ body {
 
 .splide__pagination__page.is-active {
   background: map.get($colors, "darkBlue") !important;
-}
-
-@include lg {
 }
 
 .accordion-button {
@@ -643,17 +646,17 @@ body {
     }
 
     tr th {
-      color: #F65451;
+      color: #f65451;
       font-weight: 600;
       text-transform: uppercase;
-      padding-bottom:0.5rem;
+      padding-bottom: 0.5rem;
     }
 
     tr td {
       padding-top: 1rem;
       padding-bottom: 1rem;
       font-size: 1.6rem;
-      color:map.get($colors, 'darkBlue');
+      color: map.get($colors, "darkBlue");
 
       @include sm {
         font-size: 1.8rem;
@@ -668,4 +671,64 @@ body {
       border-bottom: 1px solid #29335c3d;
     }
   }
+}
+
+.post-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: space-around;
+
+  article {
+    display: block;
+    width: 340px;
+    max-width: 100%;
+  }
+
+  .post-title {
+    padding: 0.75rem 1rem 0 1rem;
+    font-size: 1.8rem;
+    order:1;
+    a {display:block;}
+  }
+
+  .post-card {
+    background-color: #ffffff7d;
+    border-radius: 5px;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+  }
+
+  .post-content {
+    padding: 1rem;
+    order:2;
+  }
+
+  .img-url {
+    display: block;
+    order:0;
+    overflow: hidden;
+  }
+
+  .excerpt {
+    color: #00000091;
+  }
+
+  .wp-post-image {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 200px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    //image-rendering: crisp-edges; 
+    //image-rendering: -webkit-optimize-contrast;
+  }
+
+  .post-card a:hover .wp-post-image,
+  .post-title:hover ~ .img-url .wp-post-image {
+    transform: scale(1.075);
+  }
+
 }

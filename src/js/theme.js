@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gap: "10px",
         arrows:false,
         breakpoints: {
-          680: {
+          768: {
             perPage: 2,
             arrows: true,
           },
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gap: "10px",
         arrows: false,
         breakpoints: {
-          680: {
+          768: {
             perPage: 2,
             arrows: true,
           },
