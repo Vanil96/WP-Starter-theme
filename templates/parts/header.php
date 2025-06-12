@@ -33,6 +33,18 @@
             </div>
         </div>
     </div>
-    <button type="button" id="mb-menu-toggler"> </button>
+    <button type="button" id="mb-menu-toggler">
+    <span class="open-icon">
+                <svg class="icon icon-chevron">
+                    <use xlink:href="<?php echo svgPath(); ?>#menu"></use>
+                </svg>
+            </span>
+            <span class="close-icon">
+                <svg class="icon icon-chevron">
+                    <use xlink:href="<?php echo svgPath(); ?>#x"></use>
+                </svg>
+            </span>        
+
+</button>
 </header>
 </section>

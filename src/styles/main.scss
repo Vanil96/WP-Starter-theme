@@ -44,7 +44,7 @@ body {
 .hero {
   &-container {
     position: relative;
-    min-height: 470px;
+    min-height: 390px;
     background-image: url("#{$images}header.png");
     background-position: left bottom;
     background-repeat: no-repeat;
@@ -52,6 +52,11 @@ body {
     padding: 1rem;
     display: flex;
     align-items: center;
+
+    @include sm {
+      background-size: 45% auto;
+      min-height: 470px;
+    }
 
     @include lg {
       background-size: 50% auto;
@@ -64,12 +69,20 @@ body {
   }
 
   &-container_inner {
-    margin: auto;
+    margin: 15px auto auto auto;
     max-width: 720px;
     display: flex;
     gap: 1rem;
     text-align: center;
     flex-direction: column;
+    @include lg {
+      margin: 80px auto auto auto;
+    }
+
+    @include xxl {
+      margin: 120px auto auto auto;
+    }
+ 
   }
 
   .btn-icon {
@@ -103,8 +116,21 @@ body {
 .title {
   color: map.get($colors, "darkBlue");
   font-size: 3.4rem;
+
   @include sm {
     font-size: 4.2rem;
+  }
+
+  @include md {
+    font-size: 4.8rem;
+  }
+
+  @include lg {
+    font-size: 5rem;
+  }
+
+  @include xl {
+    font-size: 5.2rem;
   }
 
   @include xxl {
@@ -681,38 +707,41 @@ body {
 
   article {
     display: block;
-    width: 340px;
+    width: 360px;
     max-width: 100%;
   }
 
   .post-title {
-    padding: 0.75rem 1rem 0 1rem;
-    font-size: 1.8rem;
-    order:1;
-    a {display:block;}
+    padding: 1rem 1.25rem 0 1.25rem;
+    font-size: 1.9rem;
+    order: 1;
+    a {
+      display: block;
+    }
   }
 
   .post-card {
     background-color: #ffffff7d;
-    border-radius: 5px;
+    background-color:#f2efe1;
+    border-radius: 8px;
     overflow: hidden;
-    display:flex;
+    display: flex;
     flex-direction: column;
   }
 
   .post-content {
-    padding: 1rem;
-    order:2;
+    padding: 1.25rem;
+    order: 2;
   }
 
   .img-url {
     display: block;
-    order:0;
+    order: 0;
     overflow: hidden;
   }
 
   .excerpt {
-    color: #00000091;
+    color:#29335ce8;
   }
 
   .wp-post-image {
@@ -721,8 +750,10 @@ body {
     object-fit: cover;
     object-position: center;
     height: 200px;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-    //image-rendering: crisp-edges; 
+    transition:
+      transform 0.3s ease-in-out,
+      filter 0.3s ease-in-out;
+    //image-rendering: crisp-edges;
     //image-rendering: -webkit-optimize-contrast;
   }
 
@@ -730,5 +761,4 @@ body {
   .post-title:hover ~ .img-url .wp-post-image {
     transform: scale(1.075);
   }
-
 }

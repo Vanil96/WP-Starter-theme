@@ -6,7 +6,6 @@
         <?php get_template_part('templates/parts/left-sidebar'); ?>
 
         <main class="site-main" role="main">
-
             <?php   if (have_posts()) { ?>
             <header class="page-header">
                 <?php
@@ -14,25 +13,39 @@
 						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 						?>
             </header><!-- .page-header -->
-            <section class="main_inner">
-                <?php 
+            <section class="main_inner container container-w">
+                <section class="post-container ">
+
+
+                    <?php 
 					while(have_posts() ):
           			 the_post(); 
 				     //get_template_part( 'templates/loop/content', get_post_format() ); ?>
-                <article>
-                    <header class="page-header single-post_header">
-                        <?php if ( has_post_thumbnail() ) { 
-   							 the_post_thumbnail('medium-large'); } ?>
-                        <h2 class="single-post_title"><?php the_title(); ?> </h2>
-                    </header> <!-- post-header -->
 
-                    <div class="single-post_content"> <?php the_content(); ?> </div>
-                </article>
+                    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+                        <div class="post-card shadow mb-6">
 
-                <?php  endwhile;  wp_reset_query();?>
+                            <?php
+		the_title(
+			sprintf( '<h2 class="post-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+			'</a></h2>'
+		); ?>
 
+                            <a href="<?php the_permalink(); ?>" rel="bookmark" class="img-url">
+                                <?php echo get_the_post_thumbnail( $post->ID, 'small' ); ?>
+                            </a>
+
+
+                            <div class="post-content">
+                                <div class="excerpt"> <?php the_excerpt();?> </div>
+                            </div>
+                        </div>
+                    </article><!-- #post-## -->
+
+                    <?php  endwhile;  wp_reset_query();?>
+                </section>
             </section> <!-- /main_inner -->
-	<?php } else { get_template_part( 'templates/loop/none' );}  ?>
+            <?php } else { get_template_part( 'templates/loop/none' );}  ?>
 
         </main>
 

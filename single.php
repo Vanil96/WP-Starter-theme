@@ -8,7 +8,7 @@ get_header(); ?>
         <?php get_template_part('templates/parts/left-sidebar'); ?>
 
         <main class="site-main" role="main">
-            <section class="main_inner">
+            <section class="main_inner container container-w">
 
                 <?php if (have_posts()){ 
        while(have_posts() ):

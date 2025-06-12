@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(array( "wps-theme") ); ?>>
 	<?php
 	while ( have_posts() ) {
 		the_post();
