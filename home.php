@@ -13,7 +13,8 @@ get_header(); ?>
 
                 <section class="page-header container container-w">
                     <h1 class="subtitle text-center">Blog</h1>
-                    <h2 class="large-subtitle text-center">Wpisy blogowe <br> o psychologii <span>i nie tylko!</span> </h2>
+                    <h2 class="large-subtitle text-center">Wpisy blogowe <br> o psychologii <span>i nie tylko!</span>
+                    </h2>
                 </section>
 
                 <?php   
@@ -30,7 +31,8 @@ get_header(); ?>
 				} else {
 					get_template_part( 'templates/loops/content', 'none' );
 				}
-                  wps_post_nav(); ?>
+                 // wps_post_nav(); 
+                  ?>
 
             </section> <!-- /main_inner -->
         </main>

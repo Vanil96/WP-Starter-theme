@@ -82,7 +82,6 @@ body {
     @include xxl {
       margin: 120px auto auto auto;
     }
- 
   }
 
   .btn-icon {
@@ -481,9 +480,13 @@ body {
   transition: width 0.25s ease-in-out;
 }
 
-.links-line-hover a:hover::after {
-  width: 100%;
+@media (min-width: 760px) {
+  //animation in mobile not work properly
+  .links-line-hover a:hover::after {
+    width: 100%;
+  }
 }
+
 // Kontener formularza
 .cf7-custom {
   max-width: 670px;
@@ -722,7 +725,7 @@ body {
 
   .post-card {
     background-color: #ffffff7d;
-    background-color:#f2efe1;
+    background-color: #f2efe1;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -741,7 +744,7 @@ body {
   }
 
   .excerpt {
-    color:#29335ce8;
+    color: #29335ce8;
   }
 
   .wp-post-image {
@@ -760,5 +763,53 @@ body {
   .post-card a:hover .wp-post-image,
   .post-title:hover ~ .img-url .wp-post-image {
     transform: scale(1.075);
+  }
+}
+
+.entry-content {
+  //default page && post content
+  margin-top: 10px;
+  padding-bottom: clamp(2rem, 2vw, 3.5rem);
+
+  ul {
+    list-style: circle;
+    padding-left: 20px;
+    margin-top: 0.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0.75em;
+    margin-bottom: 0.45em;
+  }
+
+  line-height: 1.5em;
+  p,
+  span {
+    font-size: 1.8rem;
+  }
+
+  .aligncenter {
+    text-align: center;
+  }
+
+  img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+body.single-post {
+  .entry-content {
+    margin-top: clamp(2rem, 2vw, 3rem);
+  }
+
+  article.post {
+    max-width: 1024px;
+    margin: auto;
   }
 }

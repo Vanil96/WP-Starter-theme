@@ -2,17 +2,17 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();?>
-<section class="wrapper" id="author-wrapper"> 
-<div class="wrapper_inner" id="content" tabindex="-1"> 
+<section class="wrapper" id="author-wrapper">
+    <div class="wrapper_inner" id="content" tabindex="-1">
 
-		
-<?php get_template_part('templates/parts/left-sidebar'); ?>
 
-			<main class="site-main" id="main">
+        <?php get_template_part('templates/parts/left-sidebar'); ?>
 
-				<header class="page-header author-header">
+        <main class="site-main" id="main">
 
-					<?php
+            <header class="page-header author-header">
+
+                <?php
 					if ( get_query_var( 'author_name' ) ) {
 						$curauth = get_user_by( 'slug', get_query_var( 'author_name' ) );
 					} else {
@@ -32,28 +32,29 @@ get_header();?>
 
 					if ( ! empty( $curauth->user_url ) || ! empty( $curauth->user_description ) ) {
 						?>
-						<dl>
-							<?php if ( ! empty( $curauth->user_url ) ) : ?>
-								<dt><?php esc_html_e( 'Website', 'wps'); ?></dt>
-								<dd>
-									<a href="<?php echo esc_url( $curauth->user_url ); ?>"><?php echo esc_html( $curauth->user_url ); ?></a>
-								</dd>
-							<?php endif; ?>
+                <dl>
+                    <?php if ( ! empty( $curauth->user_url ) ) : ?>
+                    <dt><?php esc_html_e( 'Website', 'wps'); ?></dt>
+                    <dd>
+                        <a
+                            href="<?php echo esc_url( $curauth->user_url ); ?>"><?php echo esc_html( $curauth->user_url ); ?></a>
+                    </dd>
+                    <?php endif; ?>
 
-							<?php if ( ! empty( $curauth->user_description ) ) : ?>
-								<dt>
-									<?php
+                    <?php if ( ! empty( $curauth->user_description ) ) : ?>
+                    <dt>
+                        <?php
 									printf(
 										/* translators: %s: author name */
 										esc_html__( 'About %s', 'wps' ),
 										$curauth->display_name
 									);
 									?>
-								</dt>
-								<dd><?php echo esc_html( $curauth->user_description ); ?></dd>
-							<?php endif; ?>
-						</dl>
-						<?php
+                    </dt>
+                    <dd><?php echo esc_html( $curauth->user_description ); ?></dd>
+                    <?php endif; ?>
+                </dl>
+                <?php
 					}
 
 					if ( have_posts() ) {
@@ -65,10 +66,10 @@ get_header();?>
 					}
 					?>
 
-				</header><!-- .page-header -->
+            </header><!-- .page-header -->
 
-				<!-- The Loop -->
-				<?php
+            <!-- The Loop -->
+            <?php
 				if ( have_posts() ) {
 					while ( have_posts() ) {
 						the_post();
@@ -77,14 +78,14 @@ get_header();?>
 				} else {
 					get_template_part( 'templates/loops/content', 'none' );
 				}
-                wps_post_nav(); 
+                //wps_post_nav(); 
                 				?>
-				<!-- End if -->
-                </main>
+            <!-- End if -->
+        </main>
 
-<?php get_template_part('templates/parts/right-sidebar'); ?>
+        <?php get_template_part('templates/parts/right-sidebar'); ?>
 
-</div> <!-- /wrapper_inner -->
+    </div> <!-- /wrapper_inner -->
 </section> <!-- /wrapper -->
 
 

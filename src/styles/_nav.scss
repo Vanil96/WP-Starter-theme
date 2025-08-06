@@ -142,7 +142,6 @@ $mb-menu-beakpoint: 960px;
     max-height: $mb-header-height;
     position: relative;
     width: 100%;
-    border: 1px solid rebeccapurple;
     z-index: 999;
 
     ul.primary-nav {
@@ -167,7 +166,6 @@ $mb-menu-beakpoint: 960px;
     justify-content: flex-start !important;
     gap: 1rem;
     max-height: 0;
-    border: 1px solid rgb(255, 0, 106);
     width: 100%;
     overflow: hidden;
     position: absolute;

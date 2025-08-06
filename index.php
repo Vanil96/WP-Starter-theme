@@ -15,7 +15,7 @@ get_header(); ?>
 
                 <section class="page-header container container-w">
                     <h1 class="page-title">
-                         <?php 
+                        <?php 
    					 if ( is_home() && ! is_front_page() ) {
        					 echo get_the_title( get_option('page_for_posts') ); 
    							 } else {
@@ -38,7 +38,8 @@ get_header(); ?>
 				} else {
 					get_template_part( 'templates/loops/content', 'none' );
 				}
-                  wps_post_nav(); ?>
+                 // wps_post_nav(); 
+                  ?>
 
             </section> <!-- /main_inner -->
         </main>

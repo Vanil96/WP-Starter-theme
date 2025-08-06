@@ -14,10 +14,8 @@ get_header(); ?>
        while(have_posts() ):
            the_post();  
            get_template_part('templates/loops/content', 'single' );
-           wps_post_nav();
-
-					if ( comments_open() || get_comments_number() ):comments_template(); 
-          endif;
+            //wps_post_nav();
+            //if ( comments_open() || get_comments_number() ):comments_template(); endif;	
 					
         endwhile;  
         wp_reset_query();
