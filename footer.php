@@ -20,7 +20,7 @@
             </p>
 
             <p class="mb-3 bold-400">
-                <a href="mailto:patrycja@koscielniak.pl">patrycja@koscielniak.pl</a>
+                <a href="mailto:kontakt@patrycjakoscielniak.pl">kontakt@patrycjakoscielniak.pl</a>
             </p>
 
             <div class="row social-icons gap-2 mt-4 m-0">
@@ -65,7 +65,7 @@
         <div>
             <p>Wykonanie: DM</p>
         </div>
-        <div><a href="hehe.jpg">Polityka prywatności</a></div>
+        <div><a href="/polityka-prywatnosci">Polityka prywatności</a></div>
     </div>
 
 </footer><!-- #main-footer  -->

@@ -13,12 +13,12 @@
             <?php echo $groupName['title']; ?>
         </h1>
 
-        <div class="popInText"><a class="btn" href="<?php echo esc_attr($groupName['btn_url']); ?>"> <?php echo $groupName['btn_name']; ?></a>
+        <div class="popInText hidden"><a class="btn" href="<?php echo esc_attr($groupName['btn_url']); ?>"> <?php echo $groupName['btn_name']; ?></a>
         </div>
     </div>
 
 
-    <a class="btn-icon" href="#about-me">
+    <a class="btn-icon popInText" href="#about-me">
         <svg class="icon icon-chevron">
             <use xlink:href="<?php echo svgPath(); ?>#chevron-down"></use>
         </svg>

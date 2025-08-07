@@ -70,7 +70,7 @@ body {
 
   &-container_inner {
     margin: 15px auto auto auto;
-    max-width: 720px;
+    max-width: 745px;
     display: flex;
     gap: 1rem;
     text-align: center;
@@ -352,6 +352,13 @@ body {
 .accordion-button[aria-expanded="false"] .open-accordion {
   display: block;
 }
+
+@media (min-width: 560px) {
+  .accordion .content {
+    font-size: 18px;
+  }
+}
+
 // end of accordion
 
 .faq-container {
@@ -584,8 +591,8 @@ body {
 }
 
 .page-header {
-  margin-top: clamp(3rem, 3vw, 5rem);
-  margin-bottom: clamp(3rem, 3vw, 5rem);
+  margin-top: clamp(7rem, 5vw, 10rem);
+  margin-bottom: clamp(2rem, 2.5vw, 5rem);
   text-align: center;
 
   opacity: 0;
@@ -629,7 +636,7 @@ body {
   }
 }
 
-@include max-sm {
+@include max-md {
   #about-me {
     text-align: center;
   }
@@ -812,4 +819,8 @@ body.single-post {
     max-width: 1024px;
     margin: auto;
   }
+}
+
+.hidden {
+  display: none !important;
 }

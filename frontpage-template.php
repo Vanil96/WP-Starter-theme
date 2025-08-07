@@ -32,11 +32,11 @@ get_header();
 
                                 </h2>
 
-                                <div class="sm:text-lg">
+                                <div class="text-sm md:text-md lg:text-lg">
                                     <?php echo acfField('about_me', 'content');?>
                                 </div>
 
-                                <div>
+                                <div class="hidden">
                                     <a class="btn"
                                         href="<?php echo esc_attr(acfField('about_me', 'btn_url'));?>"><?php echo acfField('about_me', 'btn_name');?></a>
                                 </div>
@@ -88,7 +88,8 @@ get_header();
                         'post_type'      => 'post',  
                         'posts_per_page' => 4,       
                         'orderby'        => 'date', 
-                        'order'          => 'DESC'  
+                        'order'          => 'DESC',
+                        'category__not_in' => array(3),  //hide seo category
                     );
 
                     $query = new WP_Query($args);

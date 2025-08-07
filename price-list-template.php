@@ -23,7 +23,7 @@ get_header();
                 </section>
 
 
-                <section class="container section-padding container-sm mb-10">
+                <section class="container section-padding container-sm pt-0">
 
                     <?php
                     if (have_rows('price-list')): ?>
@@ -40,7 +40,9 @@ get_header();
                     if ($visible): ?>
 
                             <tr>
-                                <td><?php the_sub_field('name'); ?></td>
+                                <td>
+                                    <h3 class="text-sm lg:text-md"><?php the_sub_field('name'); ?></h3>
+                                </td>
                                 <td><?php the_sub_field('price'); ?></td>
                                 <td><?php the_sub_field('time'); ?></td>
                             </tr>
@@ -50,6 +52,15 @@ get_header();
                         </table>
                     </div>
                     <?php endif; ?>
+                </section>
+
+
+                <section class="container section-padding container-sm mb-10 pt-0 text-center">
+                    <p class="text-md mb-4" style="max-width:840px; margin:auto;">Jeśli masz pytania dotyczące powyższego cennika lub chcesz umówić się na wizytę w moim gabinecie
+                        psychologicznym w Rzeszowie – zapraszam do kontaktu. Chętnie odpowiem i pomogę dobrać odpowiednią
+                        formę wsparcia.</p>
+
+                    <a class="btn" href="/kontakt">Przejdź do kontaktu</a>
                 </section>
 
             </section> <!-- /main_inner -->

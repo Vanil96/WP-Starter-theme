@@ -24,3 +24,12 @@ foreach ( $wps_includes as $file ) {
 	require_once get_theme_file_path( $wps_inc_dir . $file );
 }
 
+
+//hide seo category
+function exclude_category_from_blog( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'cat', '-3' ); 
+    }
+}
+add_action( 'pre_get_posts', 'exclude_category_from_blog' );
+

@@ -167,7 +167,7 @@ function display_faq() {
         </button>
     </h3>
     <div class="panel" hidden>
-        <p><?php the_sub_field('content'); ?></p>
+        <div class="content"><?php the_sub_field('content'); ?></div>
     </div>
     <?php endif; ?>
     <?php endwhile; ?>

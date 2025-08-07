@@ -5,7 +5,7 @@
     the_custom_logo(); }  ?>
 
         <div class="caption">
-            <a href=""> <span class="large">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <span class="large">
                     Patrycja <br> Kościelniak
                 </span> <br>
                 <span class="small"> psycholog </span>
