@@ -307,8 +307,15 @@ body {
   font-size: 1.6rem;
   margin-top: 3rem;
   background: transparent;
+  h4 {
+    font-size: 1.6rem;
+  }
+
   @include lg {
     font-size: 2.3rem;
+    h4 {
+      font-size: 2.3rem;
+    }
   }
 }
 
@@ -633,6 +640,10 @@ body {
       justify-content: center;
       border-radius: 50%;
     }
+
+    img {
+      max-height: 77%;
+    }
   }
 }
 
@@ -795,6 +806,9 @@ body {
   }
 
   line-height: 1.5em;
+
+  p{margin-top:1rem;}
+
   p,
   span {
     font-size: 1.8rem;

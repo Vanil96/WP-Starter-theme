@@ -43,8 +43,8 @@ get_header();
                             </div>
 
                             <div class="offer-list_content">
-                                <h2 class="large-subtitle"> <?php the_sub_field('title'); ?>
-                                </h2>
+                                <h3 class="large-subtitle"> <?php the_sub_field('title'); ?>
+                                </h3>
 
                                 <p class="text-sm"><?php the_sub_field('content'); ?> </p>
                             </div>

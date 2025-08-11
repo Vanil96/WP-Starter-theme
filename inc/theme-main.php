@@ -134,7 +134,7 @@ function display_offers_short($post_id) {
            		 </div>
 
            		 <div class="card-image_desc">
-                  		  <?php the_sub_field('title'); ?>
+                  		<h4 class="card-image_desc"><?php the_sub_field('title'); ?></h4>  
                		 </p>
            		 </div>
       	  </div>
@@ -151,7 +151,7 @@ function display_faq() {
     <?php while (have_rows('faq', 'option')): the_row(); 
                 $visible = get_sub_field('visible');
                 if ($visible): ?>
-    <h3 class="accordion-header">
+    <div class="accordion-header">
         <button class="accordion-button" aria-expanded="false">
             <span class="close-accordion">
                 <svg class="icon icon-chevron">
@@ -163,9 +163,9 @@ function display_faq() {
                     <use xlink:href="<?php echo svgPath(); ?>#chevron-down"></use>
                 </svg>
             </span>
-            <?php the_sub_field('question'); ?>
+           <h4><?php the_sub_field('question'); ?></h4> 
         </button>
-    </h3>
+                </div>
     <div class="panel" hidden>
         <div class="content"><?php the_sub_field('content'); ?></div>
     </div>
