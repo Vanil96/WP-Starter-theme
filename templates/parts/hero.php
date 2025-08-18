@@ -1,19 +1,20 @@
 <!-- hero front page -->
 
 <section class="hero hero-container">
-<?php 
+    <?php 
     $groupName = get_field('header', 6);
 
 
 ?>
     <div class="hero-container_inner">
-        <p class="subtitle fadeInFromTop"><?php echo $groupName['title_extend']; ?> </p>
-      
-        <h1 class="title font-mixed fadeInFromTop">
-            <?php echo $groupName['title']; ?>
-        </h1>
+        <h1 class="subtitle fadeInFromTop"><?php echo $groupName['title_extend']; ?> </h1>
 
-        <div class="popInText hidden"><a class="btn" href="<?php echo esc_attr($groupName['btn_url']); ?>"> <?php echo $groupName['btn_name']; ?></a>
+        <h2 class="title font-mixed fadeInFromTop">
+            <?php echo $groupName['title']; ?>
+        </h2>
+
+        <div class="popInText hidden"><a class="btn" href="<?php echo esc_attr($groupName['btn_url']); ?>">
+                <?php echo $groupName['btn_name']; ?></a>
         </div>
     </div>
 
@@ -22,6 +23,6 @@
         <svg class="icon icon-chevron">
             <use xlink:href="<?php echo svgPath(); ?>#chevron-down"></use>
         </svg>
-</a>
+    </a>
 
-</section>  
+</section>

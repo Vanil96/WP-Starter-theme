@@ -105,7 +105,6 @@ get_header();
 
                 </section>
 
-
                 <section class="container section-padding container-w fadeInOnScroll" id="services">
                     <h2 class="subtitle text-center">FAQ</h2>
                     <h3 class="large-subtitle text-center">Najczęściej zadawane <span>pytania</span> </h3>
@@ -113,6 +112,7 @@ get_header();
                         <?php display_faq(); ?>
                     </section>
                 </section>
+
             </section> <!-- /main_inner -->
         </main>
 

@@ -16,9 +16,13 @@ get_header();
             <section class="main_inner">
 
                 <section class="page-header container container-w">
-                    <h1 class="subtitle">Oferta</h1>
+                    <h1 class="subtitle"><?php echo the_field('page-overtitle');?></h1>
                     <h2 class="page-title"> <?php echo the_field('page-title');?>
                     </h2>
+
+                    <?php if( get_field('page-description') ): ?>
+                    <p class="page-description"><?php the_field('page-description'); ?></p>
+                    <?php endif; ?>
 
                 </section>
 
@@ -57,6 +61,15 @@ get_header();
                     </div>
 
                 </section>
+
+                <section class="container section-padding container-sm mb-10 pt-0 text-center">
+                    <p class="text-md mb-4" style="max-width:840px; margin:auto;">Masz pytania dotyczące oferty lub
+                        chcesz umówić się na konsultację w poradni psychologicznej? Skontaktuj się ze mną – chętnie
+                        odpowiem i pomogę wybrać formę wsparcia odpowiednią dla Ciebie.</p>
+
+                    <a class="btn" href="/kontakt">Przejdź do kontaktu</a>
+                </section>
+
 
             </section> <!-- /main_inner -->
         </main>

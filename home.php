@@ -12,9 +12,14 @@ get_header(); ?>
             <section class="main_inner container container-w">
 
                 <section class="page-header container container-w">
-                    <h1 class="subtitle text-center">Blog psychologiczny</h1>
-                    <h2 class="large-subtitle text-center">Psychologia dziecięca<br>i wsparcie emocjonalne 
+                    <h1 class="subtitle"><?php echo the_field('page-overtitle', 8);?></h1>
+                    <h2 class="page-title"> <?php echo the_field('page-title', 8);?>
                     </h2>
+
+                    <?php if( get_field('page-description', 8) ): ?>
+                    <p class="page-description"><?php the_field('page-description', 8); ?></p>
+                    <?php endif; ?>
+
                 </section>
 
                 <?php   

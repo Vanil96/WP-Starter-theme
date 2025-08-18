@@ -607,6 +607,13 @@ body {
   animation: fadeInAnimation 1s ease-out forwards;
 }
 
+.page-description {
+  font-size: 2.2rem;
+  max-width: 840px;
+  margin: auto;
+  text-align: center;
+}
+
 .offer-list {
   &_container {
   }
@@ -807,7 +814,9 @@ body {
 
   line-height: 1.5em;
 
-  p{margin-top:1rem;}
+  p {
+    margin-top: 1rem;
+  }
 
   p,
   span {
@@ -837,4 +846,19 @@ body.single-post {
 
 .hidden {
   display: none !important;
+}
+
+.instagram-container {
+  #sb_instagram .sbi_follow_btn a {
+    display: inline-block;
+    border-radius: 30px;
+    font-size: 1.6rem;
+    color: #191f37;
+    background-color: #f2efe1 !important;
+    border: 2px solid #29335c !important;
+    font-weight: 500;
+    transition: 0.3s;
+    padding: 0.5em 0.85em;
+    box-shadow: none !important;
+  }
 }

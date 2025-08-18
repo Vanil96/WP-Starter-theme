@@ -16,10 +16,13 @@ get_header();
             <section class="main_inner">
 
                 <section class="page-header container container-w">
-                    <h1 class="subtitle">Cennik</h1>
+                    <h1 class="subtitle"><?php echo the_field('page-overtitle');?></h1>
                     <h2 class="page-title"> <?php echo the_field('page-title');?>
                     </h2>
 
+                    <?php if( get_field('page-description') ): ?>
+                    <p class="page-description"><?php the_field('page-description'); ?></p>
+                    <?php endif; ?>
                 </section>
 
 
@@ -56,9 +59,10 @@ get_header();
 
 
                 <section class="container section-padding container-sm mb-10 pt-0 text-center">
-                    <p class="text-md mb-4" style="max-width:840px; margin:auto;">Jeśli masz pytania dotyczące powyższego cennika lub chcesz umówić się na wizytę w moim gabinecie
-                        psychologicznym w Rzeszowie – zapraszam do kontaktu. Chętnie odpowiem i pomogę dobrać odpowiednią
-                        formę wsparcia.</p>
+                    <p class="text-md mb-4" style="max-width:840px; margin:auto;">Jeśli masz pytania dotyczące
+                        powyższego cennika lub chcesz umówić się na konsultację w poradni psychologicznej w
+                        Rzeszowie – zapraszam do kontaktu. <br> Z przyjemnością odpowiem na Twoje pytania i pomogę dobrać
+                        formę wsparcia dopasowaną do Twoich potrzeb.</p>
 
                     <a class="btn" href="/kontakt">Przejdź do kontaktu</a>
                 </section>
