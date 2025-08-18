@@ -174,3 +174,37 @@ function display_faq() {
 </div>
 <?php endif;
 }
+
+
+function display_social_links() {
+    $socials = [
+        'instagram' => 'Instagram',
+        'linkedin'  => 'LinkedIn',
+        'facebook'  => 'Facebook',
+    ];
+
+    $has_any = false;
+    foreach ($socials as $slug => $label) {
+        if (get_field("{$slug}_link", 'options')) {
+            $has_any = true;
+            break;
+        }
+    }
+
+    if ($has_any): ?>
+        <div class="row social-icons gap-2 mt-4 m-0">
+            <?php foreach ($socials as $slug => $label) :
+                $url = get_field("{$slug}_link", 'options');
+                if ($url) : ?>
+                    <div>
+                        <a href="<?php echo esc_url($url); ?>" target="_blank" title="Przejdź do <?php echo esc_attr(strtolower($label)); ?>">
+                            <svg class="icon icon-chevron">
+                                <use xlink:href="<?php echo svgPath(); ?>#<?php echo esc_attr($slug); ?>"></use>
+                            </svg>
+                        </a>
+                    </div>
+                <?php endif;
+            endforeach; ?>
+        </div>
+    <?php endif;
+}

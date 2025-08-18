@@ -12,11 +12,22 @@
         <div class="col-12 col-sm-4 col-lg-2 mt-4">
             <p class="font-secondary font-italic text-md mb-3">Dane kontaktowe</p>
 
-            <p class="mb-3 bold-400">Rzeszów, <br>
-                ul. Przykładowa XX </p>
 
-            <p class="mb-3 bold-400"> Pon. - Pt. 8:00 - 16:00 <br>
-                Tel. <a href="tel:+48123456789">+ 48 123 456 789</a>
+            <p class="mb-3 bold-400"><?php the_field('miasto', 'options') ?> <br> <?php the_field('adres', 'options') ?>
+            </p>
+
+
+            <p class="mb-3 bold-400"> <?php 
+    the_field('godz_otwarcia', 'options')
+?> <br>
+
+                <?php
+        $tel_link = get_field('nr_telefonu_link', 'options');
+        $tel = get_field('nr_telefonu', 'options');
+        if ($tel_link && $tel) : ?>
+                Tel. <a href="<?php echo esc_url($tel_link); ?>"><?php echo esc_html($tel); ?></a>
+                <?php endif; ?>
+
             </p>
 
             <p class="mb-3 bold-400">
@@ -24,16 +35,7 @@
             </p>
 
             <div class="row social-icons gap-2 mt-4 m-0">
-                <div><a href="">
-                        <svg class="icon icon-chevron">
-                            <use xlink:href="<?php echo svgPath(); ?>#instagram"></use>
-                        </svg>
-                    </a></div>
-                <div><a href="">
-                        <svg class="icon icon-chevron">
-                            <use xlink:href="<?php echo svgPath(); ?>#linkedin"></use>
-                        </svg>
-                    </a></div>
+                <?php display_social_links(); ?>
             </div>
 
         </div>

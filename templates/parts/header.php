@@ -20,16 +20,7 @@
 
         <div class="social-wrapper links-line-hover">
             <div class="row social-icons gap-3 m-0">
-                <div><a href="">
-                        <svg class="icon icon-chevron">
-                            <use xlink:href="<?php echo svgPath(); ?>#instagram"></use>
-                        </svg>
-                    </a></div>
-                <div><a href="">
-                        <svg class="icon icon-chevron">
-                            <use xlink:href="<?php echo svgPath(); ?>#linkedin"></use>
-                        </svg>
-                    </a></div>
+             <?php display_social_links(); ?>                
             </div>
         </div>
     </div>

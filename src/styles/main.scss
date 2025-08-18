@@ -862,3 +862,13 @@ body.single-post {
     box-shadow: none !important;
   }
 }
+
+#contact-info {
+  .cf7-custom {
+    margin: auto;
+  }
+}
+
+.clr-darkBlue {
+  color: map.get($colors, "darkBlue");
+}

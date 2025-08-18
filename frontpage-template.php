@@ -80,8 +80,8 @@ get_header();
                 </section>
 
                 <section class="container section-padding container-w fadeInOnScroll" id="blog">
-                    <h2 class="subtitle text-center">BLOG</h2>
-                    <h3 class="large-subtitle text-center">Najnowsze wpisy <span>blogowe</span> </h3>
+                    <h2 class="subtitle text-center">Blog</h2>
+                    <h3 class="large-subtitle text-center">Najnowsze wpisy </h3>
 
                     <?php
                     $args = array(
