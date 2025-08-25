@@ -253,6 +253,10 @@ body {
   > div {
     margin: auto;
   }
+
+  &:hover {
+    cursor: grab;
+  }
 }
 
 .splide {
