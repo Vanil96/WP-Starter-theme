@@ -86,9 +86,9 @@ $mb-menu-beakpoint: 960px;
   border-top: 1px solid map.get($colors, "darkBlue");
   padding-top: 17px;
 
-  @include lg {
+  @media (min-width:960px) {
     padding-top:0;
-    border-top:0;
+    border-top:5px;
     padding-left: 1.5rem;
     border-left: 1px solid map.get($colors, "darkBlue");
   }
@@ -182,7 +182,7 @@ $mb-menu-beakpoint: 960px;
       max-height: calc(100vh - $mb-header-height);
       overflow: auto;
       z-index: 999;
-      background:#f2efe1;
+      background:#f6fbff6b;
     }
   }
 
@@ -239,7 +239,7 @@ $heightNavbar: 125px;
     top 0.3s,
     padding 0.3s ease;
   top: 0;
-  background-color: map.get($colors, "background");
+  background-color: rgb(246 251 255 / 80%);
 }
 
 #navbar.visible {

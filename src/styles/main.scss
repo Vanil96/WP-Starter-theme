@@ -753,8 +753,7 @@ body {
   }
 
   .post-card {
-    background-color: #ffffff7d;
-    background-color: #f2efe1;
+    background-color: map.get($colors, "background");
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -858,7 +857,7 @@ body.single-post {
     border-radius: 30px;
     font-size: 1.6rem;
     color: #191f37;
-    background-color: #f2efe1 !important;
+    background-color: map.get($colors, "background") !important;
     border: 2px solid #29335c !important;
     font-weight: 500;
     transition: 0.3s;
