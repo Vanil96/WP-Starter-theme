@@ -2,17 +2,16 @@
 
 $colors: (
   //base
-  "orange": #ef6f6c,
-  "blue": #7390dd,
-  "green": #cadb91,
+  "orange":#F0706C,  
+  "coral":#FFD9F8,  
+  "navy": #5D688E,    
   "darkBlue": #29335c,
-  //general
-  "primary": #7390dd,
-  "secondary": #29335c,
+
   //status
   "succes": green,
   "warn": yellow,
   "error": red,
+  
   //additional
   "background": #f6fbff6b,
   "dark": #191F37,
@@ -41,7 +40,6 @@ $fonts: (
 // Font colors map
 $font-colors: (
   "theme": map.get($colors, "dark"),
-  "secondary": map.get($colors, "darkBlue"),
   "btn-default": map.get($colors, "dark"),
   "btn-default-hover": map.get($colors, "white"),
   "menu-links": inherit,
@@ -53,7 +51,7 @@ $font-colors: (
 $background-colors: (
   "theme": map.get($colors, "background"),
   "btn-default": map.get($colors, "background"),
-  "btn-default-hover": map.get($colors, "primary"),
+  "btn-default-hover": map.get($colors, "navy"),
 );
 
 // Breakpoints map

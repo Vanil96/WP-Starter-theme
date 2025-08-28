@@ -192,7 +192,7 @@ function display_social_links() {
     }
 
     if ($has_any): ?>
-        <div class="row social-icons gap-2 mt-4 m-0">
+        <div class="row social-icons gap-2 m-0">
             <?php foreach ($socials as $slug => $label) :
                 $url = get_field("{$slug}_link", 'options');
                 if ($url) : ?>
