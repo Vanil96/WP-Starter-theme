@@ -24,13 +24,13 @@
             </div>
         </div>
     </div>
-    <button type="button" id="mb-menu-toggler">
-    <span class="open-icon">
+    <button type="button" id="mb-menu-toggler" aria-label="Przełącz widoczność menu">
+    <span class="open-icon" aria-hidden="true">
                 <svg class="icon icon-chevron">
                     <use xlink:href="<?php echo svgPath(); ?>#menu"></use>
                 </svg>
             </span>
-            <span class="close-icon">
+            <span class="close-icon" aria-hidden="true">
                 <svg class="icon icon-chevron">
                     <use xlink:href="<?php echo svgPath(); ?>#x"></use>
                 </svg>

@@ -38,8 +38,8 @@ get_header();
 
                         <div class="col-12 col-md-6">
                             <h3 class="text-lg bold-400 text-center mb-4 mt-4 clr-darkBlue">Dane kontaktowe</span> </h3>
-                            <div class="text-md text-center">
-                                <p class="mb-3 "><?php the_field('miasto', 'options') ?> <br>
+                            <div class="text-md text-center contact-details">
+                                <p class="mb-3 ">
                                     <?php the_field('adres', 'options') ?> </p>
 
                                 <p class="mb-3 "> <?php 
@@ -64,6 +64,15 @@ get_header();
                         </div>
                     </div>
 
+                </section>
+
+                <section class="container section-padding container-w fadeInOnScroll">
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.9119091523!2d21.972590977701053!3d50.06921137152186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfb9fbf099179%3A0x2627ea9b50368b1a!2sNiepubliczna%20Poradnia%20Psychologiczno%20-%20Pedagogiczna%20PODKARPACIAK!5e0!3m2!1spl!2spl!4v1757532106716!5m2!1spl!2spl"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </section>
 
 

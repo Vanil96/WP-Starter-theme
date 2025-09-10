@@ -19,8 +19,8 @@
     </div>
 
 
-    <a class="btn-icon popInText" href="#about-me">
-        <svg class="icon icon-chevron">
+    <a class="btn-icon popInText" href="#about-me" aria-label="Przejdź do sekcji O mnie">
+        <svg class="icon icon-chevron" aria-hidden="true">
             <use xlink:href="<?php echo svgPath(); ?>#chevron-down"></use>
         </svg>
     </a>

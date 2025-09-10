@@ -9,12 +9,12 @@
             <p class="text-xs">psycholog</p>
         </div>
 
-        <div class="col-12 col-sm-4 col-lg-2 mt-4">
+        <div class="col-12 col-sm-5 col-lg-3 mt-4">
             <p class="font-secondary font-italic text-md mb-3">Dane kontaktowe</p>
 
 
-            <p class="mb-3 bold-400"><?php the_field('miasto', 'options') ?> <br> <?php the_field('adres', 'options') ?>
-            </p>
+            <div class="mb-3 bold-400"><?php the_field('nazwa_i_adres', 'options') ?>
+            </div>
 
 
             <p class="mb-3 bold-400"> <?php 
@@ -39,7 +39,7 @@
             </div>
 
         </div>
-        <div class="col-12 col-sm-4 col-lg-2 mt-4">
+        <div class="col-12 col-sm-3 col-lg-2 mt-4">
             <p class="font-secondary font-italic text-md mb-3">Menu</p>
 
             <nav class="footer-menu">
@@ -56,7 +56,7 @@
             </nav>
 
         </div>
-        <div class="col-12 col-lg-6 mt-4">
+        <div class="col-12 col-lg-5 mt-4">
             <?php echo do_shortcode('[contact-form-7 id="4ecb8ce" title="Main"]'); ?>
         </div>
 
@@ -69,8 +69,12 @@
         </div>
         <div><a href="/polityka-prywatnosci">Polityka prywatności</a></div>
     </div>
-
 </footer><!-- #main-footer  -->
+
+
+<section class="floating-menu">
+    <?php display_social_links(); ?>
+</section>
 
 
 

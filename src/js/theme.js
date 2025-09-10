@@ -90,40 +90,60 @@ document.addEventListener("DOMContentLoaded", () => {
     }).mount();
   }
 
+  let prevScrollpos = window.pageYOffset;
 
-let prevScrollpos = window.pageYOffset;
+  window.addEventListener("scroll", () => {
+    const currentScrollPos = window.pageYOffset;
+    const navbar = document.getElementById("navbar");
+    const floatingMenu = document.querySelector(".floating-menu"); //dodatkowe menu po boku
 
-window.addEventListener("scroll", () => {
-  const currentScrollPos = window.pageYOffset;
-  const navbar = document.getElementById("navbar");
-
-  if (navbar) {
-    if (currentScrollPos <= 7) {
-      navbar.classList.add("sticky", "visible");
-      navbar.classList.remove("hidden");
-    } else {
-      navbar.classList.remove("sticky");
-
-      if (prevScrollpos > currentScrollPos) {
-        navbar.classList.add("visible");
+    if (navbar) {
+      if (currentScrollPos <= 7) {
+        navbar.classList.add("sticky", "visible");
         navbar.classList.remove("hidden");
       } else {
-        navbar.classList.add("hidden");
-        navbar.classList.remove("visible");
+        navbar.classList.remove("sticky");
+
+        if (prevScrollpos > currentScrollPos) {
+          navbar.classList.add("visible");
+          navbar.classList.remove("hidden");
+        } else {
+          navbar.classList.add("hidden");
+          navbar.classList.remove("visible");
+        }
       }
+
+      prevScrollpos = currentScrollPos;
     }
 
-    prevScrollpos = currentScrollPos;
-  } 
+    if (floatingMenu) {
+      const reachedBottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 2;
 
-});
+      if (currentScrollPos > 7 && !reachedBottom) {
+        floatingMenu.classList.add("visible");
+      } else {
+        floatingMenu.classList.remove("visible");
+      }
+    }
+  });
 
-window.addEventListener("load", () => {
-  const navbar = document.getElementById("navbar");
-  if (window.pageYOffset <= 7 && navbar) {
-    navbar.classList.add("sticky", "visible");
-  }
-});
+  window.addEventListener("load", () => {
+    const navbar = document.getElementById("navbar");
+    const floatingMenu = document.querySelector(".floating-menu");
+
+    if (window.pageYOffset <= 7 && navbar) {
+      navbar.classList.add("sticky", "visible");
+    }
+
+    if (floatingMenu) {
+      if (window.pageYOffset > 7) {
+        floatingMenu.classList.add("visible");
+      } else {
+        floatingMenu.classList.remove("visible");
+      }
+    }
+  });
 
   //fade in section on scroll
   const elements = document.querySelectorAll(".fadeInOnScroll");

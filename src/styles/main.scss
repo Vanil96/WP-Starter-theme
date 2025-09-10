@@ -12,6 +12,8 @@ body {
   opacity: 0;
   animation: fadeInAnimation ease-in 0.3s;
   animation-fill-mode: forwards;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 @keyframes fadeInAnimation {
@@ -409,7 +411,7 @@ body {
     }
 
     @include xl {
-      width: 230px;
+      width: 175px;
     }
   }
 
@@ -834,6 +836,10 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  * {
+    line-height: 1.35em;
+  }
 }
 
 body.single-post {
@@ -870,8 +876,51 @@ body.single-post {
   .cf7-custom {
     margin: auto;
   }
+
+  .contact-details {
+    max-width: 515px;
+    margin: auto;
+  }
 }
 
 .clr-darkBlue {
   color: map.get($colors, "darkBlue");
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.floating-menu {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .social-icons {
+    flex-direction: column;
+  }
+
+  @media (max-width: 1880px) {
+    display: none !important;
+  }
 }
