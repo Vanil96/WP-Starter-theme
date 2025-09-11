@@ -170,6 +170,20 @@ body {
   @extend .font-mixed;
 }
 
+.md-subtitle {
+  color: map.get($colors, "darkBlue");
+  font-size: 2.5rem;
+  font-weight: 300;
+
+  @include lg {
+    font-size: 3rem;
+  }
+
+  @include xl {
+    font-size: 3.6rem;
+  }
+}
+
 .page-title {
   color: map.get($colors, "darkBlue");
   font-size: 2.8rem;
@@ -508,7 +522,8 @@ body {
 }
 
 // Kontener formularza
-.cf7-custom {
+
+.cf7-box {
   max-width: 670px;
   width: 100%;
   margin: 0 auto;
@@ -529,7 +544,9 @@ body {
       width: 50%;
     }
   }
+}
 
+.cf7-custom {
   // Stylowanie pól formularza
   input[type="text"],
   input[type="email"],
@@ -922,5 +939,57 @@ body.single-post {
 
   @media (max-width: 1880px) {
     display: none !important;
+  }
+}
+
+.newsletter-container {
+  max-width: 900px;
+  display: flex;
+  margin: auto;
+  gap: 1rem;
+  padding: clamp(2rem, 2vw, 3.5rem);
+  ul {
+    list-style: circle;
+    padding-left: 20px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3em;
+    li {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &_left {
+    display: flex;
+    align-items: center;
+
+    img {
+      max-height: 500px;
+    }
+  }
+
+  &_right {
+    .title {
+      font-size: 23px;
+    }
+    input {
+      margin-bottom: 1rem;
+    }
+
+    input[type="checkbox"] {
+      margin-bottom: 0;
+    }
+  }
+
+  input[type="submit"] {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 580px) {
+    display: block;
+    &_left img {
+      width: 150px;
+      margin: auto;
+    }
   }
 }
