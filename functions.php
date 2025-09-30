@@ -33,3 +33,11 @@ function exclude_category_from_blog( $query ) {
 }
 add_action( 'pre_get_posts', 'exclude_category_from_blog' );
 
+
+//add suboadmin based on admin
+function create_subadmin_role() {
+    $admin = get_role('administrator');
+    
+    add_role('subadmin', 'Subadmin', $admin->capabilities);
+}
+add_action('init', 'create_subadmin_role');

@@ -113,6 +113,15 @@ get_header();
                     </section>
                 </section>
 
+
+                <section class="container section-padding container-w fadeInOnScroll">
+
+                    <?php 
+	                    get_template_part( 'templates/parts/newsletter' );
+                    ?>
+
+                </section>
+
             </section> <!-- /main_inner -->
         </main>
 

@@ -948,6 +948,11 @@ body.single-post {
   margin: auto;
   gap: 1rem;
   padding: clamp(2rem, 2vw, 3.5rem);
+
+  .md-subtitle {
+    max-width: 464px;
+  }
+
   ul {
     list-style: circle;
     padding-left: 20px;
@@ -983,10 +988,15 @@ body.single-post {
 
   input[type="submit"] {
     margin-top: 1rem;
+    white-space: pre-wrap;
   }
 
   @media (max-width: 580px) {
     display: block;
+    text-align: center;
+    ul {
+      text-align: left;
+    }
     &_left img {
       width: 150px;
       margin: auto;

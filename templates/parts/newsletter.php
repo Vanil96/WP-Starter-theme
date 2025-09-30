@@ -8,9 +8,9 @@
         <div>
             <p class="md-subtitle "> Zapisz się na mój newsletter i otrzymuj co kilka tygodni: </p>
             <ul>
-                <li> proste porady psychologiczne dla rodziców </li>
+                <li> proste porady psychologiczne</li>
                 <li> pomocne materiały PDF </li>
-                <li> inspirujące treści o rozwoju emocjonalnym dzieci </li>
+                <li> inspirujące treści o rozwoju dzieci i młodzieży </li>
             </ul>
         </div>
         <?php echo do_shortcode('[contact-form-7 id="7a75645" title="Newsletter"]'); ?>
